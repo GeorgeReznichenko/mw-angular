@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@mw-angular/complex-filter": [
+        "dist/mw-angular/complex-filter"
+      ],
+      "@mw-angular/complex-filter/*": [
+        "dist/mw-angular/complex-filter/*"
+      ]
+    }
   }
 }
