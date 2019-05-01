@@ -2,13 +2,17 @@
   "name": "mw-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "lint:styles": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
-    "e2e": "ng e2e"
+    "------------------ sandbox ------------------": "",
+    "start-no-libs:sandbox": "ng serve sandbox --port 4200",
+    "start:sandbox": "npm run build-libs && npm run start-no-libs:sandbox",
+    "------------------ complex-filter lib ------------------": "",
+    "build:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter",
+    "build-watch:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter --watch",
+    "lint:complex-filter": "ng lint @mw-angular/complex-filter",
+    "test:complex-filter": "ng test @mw-angular/complex-filter --watch=false --browsers=ChromeHeadless",
+    "------------------ common ------------------": "",
+    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
+    "build-libs": "npm run build:complex-filter"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +49,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "rimraf": "^2.6.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "ts-node": "~7.0.0",

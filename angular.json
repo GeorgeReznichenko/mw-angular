@@ -171,5 +171,5 @@
       }
     }
   },
-  "defaultProject": "@mw-angular/complex-filter"
+  "defaultProject": "sandbox"
 }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       complex-filter works!
     </p>
   `,
-  styles: []
+  styleUrls: ['./complex-filter.component.scss']
 })
 export class ComplexFilterComponent implements OnInit {
 
