@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ComplexFilterComponent } from './complex-filter.component';
 
 describe('ComplexFilterComponent', () => {
@@ -8,9 +7,9 @@ describe('ComplexFilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ComplexFilterComponent ]
+      declarations: [ComplexFilterComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,10 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ComplexFilterComponent } from './complex-filter.component';
+import { ComplexFilterComponent } from './components/complex-filter/complex-filter.component';
 
 @NgModule({
-  declarations: [ComplexFilterComponent],
   imports: [
+    CommonModule,
   ],
-  exports: [ComplexFilterComponent]
+  declarations: [
+    ComplexFilterComponent,
+  ],
+  exports: [
+    ComplexFilterComponent,
+  ],
 })
-export class ComplexFilterModule { }
+export class ComplexFilterModule {
+}
