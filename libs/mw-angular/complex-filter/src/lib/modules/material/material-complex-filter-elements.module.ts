@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  MaterialComplexFilterElementTextModule
-} from './material-complex-filter-element-text/material-complex-filter-element-text.module';
+import { MaterialComplexFilterElementTextModule } from './material-complex-filter-element-text/material-complex-filter-element-text.module';
 
 @NgModule({
   exports: [
