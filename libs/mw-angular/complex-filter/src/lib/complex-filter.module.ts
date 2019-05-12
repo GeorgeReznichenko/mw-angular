@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ComplexFilterContainerComponent } from './complex-filter-container.component';
 import { ComplexFilterComponent } from './components/complex-filter/complex-filter.component';
-import { ComplexFilterElementTextModule } from './modules/complex-filter-element-text/complex-filter-element-text.module';
+import { MaterialComplexFilterElementsModule } from './modules/material/material-complex-filter-elements.module';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { ComplexFilterElementTextModule } from './modules/complex-filter-element
   ],
   exports: [
     ComplexFilterContainerComponent,
-    ComplexFilterElementTextModule,
+    MaterialComplexFilterElementsModule,
   ],
 })
 export class ComplexFilterModule {
