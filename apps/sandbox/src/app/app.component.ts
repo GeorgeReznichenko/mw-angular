@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ComplexFilterConfigModel, ComplexFilterElementTextComponent } from '@mw-angular/complex-filter';
+import { ComplexFilterConfigModel, MaterialComplexFilterElementTextComponent } from '@mw-angular/complex-filter';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
     defaultFilters: [
       {
         id: 'id',
-        component: ComplexFilterElementTextComponent,
+        component: MaterialComplexFilterElementTextComponent,
       },
     ],
   };
