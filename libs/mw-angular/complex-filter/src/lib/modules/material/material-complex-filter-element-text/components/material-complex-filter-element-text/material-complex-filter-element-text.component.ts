@@ -9,6 +9,8 @@ import { COMPLEX_FILTER_COMPONENT_DATA } from '../../../../../entities/complex-f
   styleUrls: ['./material-complex-filter-element-text.component.scss'],
 })
 export class MaterialComplexFilterElementTextComponent {
+  isOpened = false;
+
   constructor(@Inject(COMPLEX_FILTER_COMPONENT_DATA) private data: ComplexFilterComponentDataModel) {
   }
 }
