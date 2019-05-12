@@ -1,1 +1,7 @@
-<h1>Complex Filter</h1>
+<div *ngFor="let defaultPortalModel of defaultPortalModels" id="complex-filter-{{defaultPortalModel.id}}">
+  <ng-container [cdkPortalOutlet]="defaultPortalModel.portal"></ng-container>
+</div>
+
+<div *ngFor="let dynamicPortalModel of dynamicPortalModels" id="complex-filter-{{dynamicPortalModel.id}}">
+  <ng-container [cdkPortalOutlet]="dynamicPortalModel.portal"></ng-container>
+</div>

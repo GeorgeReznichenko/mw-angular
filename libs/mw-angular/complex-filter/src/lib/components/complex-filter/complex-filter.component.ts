@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ComplexFilterPortalModel } from '../../entities/complex-filter-portal.model';
 
 @Component({
   selector: 'mw-complex-filter',
@@ -7,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./complex-filter.component.scss'],
 })
 export class ComplexFilterComponent {
+  @Input() defaultPortalModels: ComplexFilterPortalModel[] = [];
+  @Input() dynamicPortalModels: ComplexFilterPortalModel[] = [];
 }
