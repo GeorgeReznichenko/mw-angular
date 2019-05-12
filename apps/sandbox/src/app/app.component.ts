@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ComplexFilterConfigModel, ComplexFilterElementTextComponent } from '@mw-angular/complex-filter';
 
 @Component({
   selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'sandbox';
+  config: ComplexFilterConfigModel = {
+    defaultFilters: [
+      {
+        id: 'id',
+        component: ComplexFilterElementTextComponent,
+      },
+    ],
+  };
 }
