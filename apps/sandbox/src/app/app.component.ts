@@ -11,7 +11,6 @@ export class AppComponent {
   config: ComplexFilterConfigModel = {
     defaultFilters: [
       {
-        id: 'id',
         component: MaterialComplexFilterElementTextComponent,
       },
     ],

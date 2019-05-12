@@ -2,7 +2,6 @@
   <button type="button"
           mat-stroked-button
           color="primary"
-          id="complex-filter-label-{{id}}-open-button"
           (click)="openEvent.emit()">
     <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
     <mat-icon>expand_more</mat-icon>
@@ -12,8 +11,7 @@
 <ng-template #openedTpl>
   <button type="button"
           mat-flat-button
-          color="primary"
-          id="complex-filter-label-{{id}}-close-button">
+          color="primary">
     <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
     <mat-icon>expand_less</mat-icon>
   </button>

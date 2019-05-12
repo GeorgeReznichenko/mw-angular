@@ -6,19 +6,19 @@ import { ComplexFilterPortalModel } from './entities/complex-filter-portal.model
 import { ComplexFilterPortalCreationService } from './services/complex-filter-portal-creation.service';
 
 @Component({
-  selector: 'mw-complex-filter-container',
+  selector: 'mw-complex-filter',
   changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [
     ComplexFilterPortalCreationService,
   ],
   template: `
-    <mw-complex-filter
+    <mw-complex-filter-inner
       [defaultPortalModels]="defaultPortalModelsSubject | async"
       [dynamicPortalModels]="dynamicPortalModelsSubject | async"
-    ></mw-complex-filter>
+    ></mw-complex-filter-inner>
   `,
 })
-export class ComplexFilterContainerComponent {
+export class ComplexFilterComponent {
   defaultPortalModelsSubject = new BehaviorSubject<ComplexFilterPortalModel[]>([]);
   dynamicPortalModelsSubject = new BehaviorSubject<ComplexFilterPortalModel[]>([]);
 
@@ -33,7 +33,6 @@ export class ComplexFilterContainerComponent {
 
   private buildPortalModel(componentModel: ComplexFilterComponentModel): ComplexFilterPortalModel {
     return {
-      id: componentModel.id,
       portal: this.complexFilterPortalCreationService.createPortal(
         componentModel.component,
         componentModel.data,

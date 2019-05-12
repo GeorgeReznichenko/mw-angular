@@ -1,8 +1,8 @@
 import { PortalModule } from '@angular/cdk/portal';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ComplexFilterContainerComponent } from './complex-filter-container.component';
-import { ComplexFilterComponent } from './components/complex-filter/complex-filter.component';
+import { ComplexFilterComponent } from './complex-filter.component';
+import { ComplexFilterInnerComponent } from './components/complex-filter-inner/complex-filter-inner.component';
 
 @NgModule({
   imports: [
@@ -10,11 +10,11 @@ import { ComplexFilterComponent } from './components/complex-filter/complex-filt
     PortalModule,
   ],
   declarations: [
-    ComplexFilterContainerComponent,
     ComplexFilterComponent,
+    ComplexFilterInnerComponent,
   ],
   exports: [
-    ComplexFilterContainerComponent,
+    ComplexFilterComponent,
   ],
 })
 export class ComplexFilterModule {

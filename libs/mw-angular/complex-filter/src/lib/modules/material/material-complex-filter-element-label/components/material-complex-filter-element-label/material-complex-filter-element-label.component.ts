@@ -7,7 +7,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   styleUrls: ['./material-complex-filter-element-label.component.scss'],
 })
 export class MaterialComplexFilterElementLabelComponent {
-  @Input() id: string;
   @Input() isOpened = false;
 
   @Output() openEvent = new EventEmitter<void>();
