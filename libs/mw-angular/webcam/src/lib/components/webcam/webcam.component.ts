@@ -1,4 +1,14 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import { WebcamImage } from '../../entities/webcam-image';
 
 @Component({
   selector: 'mw-webcam',
@@ -9,6 +19,8 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, V
 export class WebcamComponent implements AfterViewInit {
   @Input() width = 640;
   @Input() height = 480;
+
+  @Output() imageCaptureEvent = new EventEmitter<WebcamImage>();
 
   @ViewChild('video')
   private video: ElementRef;
@@ -29,5 +41,17 @@ export class WebcamComponent implements AfterViewInit {
           videoElement.play();
         });
     }
+  }
+
+  capture() {
+    const videoElement = this.video.nativeElement;
+    const canvasElement = this.canvas.nativeElement;
+
+    canvasElement.getContext('2d')
+      .drawImage(videoElement, 0, 0, this.width, this.height);
+
+    const image = new WebcamImage(canvasElement.toDataURL());
+
+    this.imageCaptureEvent.emit(image);
   }
 }
