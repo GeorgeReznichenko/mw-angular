@@ -24,6 +24,12 @@
       ],
       "@mw-angular/complex-filter/*": [
         "dist/mw-angular/complex-filter/*"
+      ],
+      "@mw-angular/webcam": [
+        "dist/mw-angular/webcam"
+      ],
+      "@mw-angular/webcam/*": [
+        "dist/mw-angular/webcam/*"
       ]
     }
   }
