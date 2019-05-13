@@ -1,10 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { WebcamComponent } from './webcam.component';
+import { WebcamComponent } from './components/webcam/webcam.component';
 
 @NgModule({
-  declarations: [WebcamComponent],
   imports: [
+    CommonModule,
   ],
-  exports: [WebcamComponent]
+  declarations: [
+    WebcamComponent,
+  ],
+  exports: [
+    WebcamComponent,
+  ],
 })
-export class WebcamModule { }
+export class WebcamModule {
+}
