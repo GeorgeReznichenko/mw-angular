@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComplexFilterConfigModel, MaterialComplexFilterElementTextComponent } from '@mw-angular/complex-filter';
+import { WebcamImage } from '../../../../libs/mw-angular/webcam/src/lib/entities/webcam-image';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,8 @@ export class AppComponent {
       },
     ],
   };
+
+  onImageCaptureEvent(data: WebcamImage) {
+    console.log(data.getBase64());
+  }
 }

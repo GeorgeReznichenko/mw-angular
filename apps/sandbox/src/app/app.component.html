@@ -2,6 +2,17 @@
   [config]="config"
 ></mw-complex-filter>
 
-<mw-webcam></mw-webcam>
+
+<div>
+  <mw-webcam
+    [width]="300"
+    [height]="500"
+    (imageCaptureEvent)="onImageCaptureEvent($event)"
+    #webcam
+  ></mw-webcam>
+</div>
+<div>
+  <button type="button" mat-raised-button (click)="webcam.imageCapture()">CAPTURE</button>
+</div>
 
 <router-outlet></router-outlet>

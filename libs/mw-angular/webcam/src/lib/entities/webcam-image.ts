@@ -2,7 +2,7 @@ export class WebcamImage {
   public constructor(private imageAsDataUrl: string) {
   }
 
-  getAsDataUrl(): string {
+  getBase64(): string {
     return this.imageAsDataUrl;
   }
 }
