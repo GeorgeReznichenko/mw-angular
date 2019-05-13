@@ -43,7 +43,7 @@ export class WebcamComponent implements AfterViewInit {
     }
   }
 
-  captureImage(): void {
+  imageCapture(): void {
     const videoElement = this.video.nativeElement;
     const canvasElement = this.canvas.nativeElement;
 
