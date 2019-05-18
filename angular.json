@@ -17,12 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sandbox",
+            "outputPath": "dist/sandbox/browser",
             "index": "apps/sandbox/src/index.html",
             "main": "apps/sandbox/src/main.ts",
             "polyfills": "apps/sandbox/src/polyfills.ts",
             "tsConfig": "apps/sandbox/tsconfig.app.json",
             "assets": [
+              "apps/sandbox/src/robots.txt",
               "apps/sandbox/src/favicon.ico",
               "apps/sandbox/src/assets"
             ],
@@ -37,7 +38,31 @@
               "fileReplacements": [
                 {
                   "replace": "apps/sandbox/src/environments/environment.ts",
-                  "with": "apps/sandbox/src/environments/environment.prod.ts"
+                  "with": "apps/sandbox/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/sandbox/src/environments/environment.ts",
+                  "with": "apps/sandbox/src/environments/environment.development.ts"
                 }
               ],
               "optimization": true,
@@ -103,6 +128,14 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/sandbox/server",
+            "main": "apps/sandbox/src/main.server.ts",
+            "tsConfig": "apps/sandbox/tsconfig.server.json"
           }
         }
       }

@@ -13,7 +13,8 @@
   from your ip, i.e. https://192.168.2.70:4200
 
 ## TODO
-- hmr
+- storybook
+- styles and stylePreprocessorOptions
 - configure environments
 - ssr
 - app shell
