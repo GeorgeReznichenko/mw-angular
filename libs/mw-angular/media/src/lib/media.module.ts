@@ -13,5 +13,5 @@ import { WebcamComponent } from './components/webcam/webcam.component';
     WebcamComponent,
   ],
 })
-export class WebcamModule {
+export class MediaModule {
 }

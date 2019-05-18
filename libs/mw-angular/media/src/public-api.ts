@@ -1,2 +1,2 @@
-export * from './lib/webcam.module';
+export * from './lib/media.module';
 export * from './lib/entities/webcam-image';

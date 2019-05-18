@@ -11,14 +11,14 @@
     "build-watch:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter --watch",
     "lint:complex-filter": "ng lint @mw-angular/complex-filter",
     "test:complex-filter": "ng test @mw-angular/complex-filter --watch=false --browsers=ChromeHeadless",
-    "------------------ webcam lib ------------------": "",
-    "build:webcam": "rimraf dist/mw-angular/webcam && ng build @mw-angular/webcam",
-    "build-watch:webcam": "rimraf dist/mw-angular/webcam && ng build @mw-angular/webcam --watch",
-    "lint:webcam": "ng lint @mw-angular/webcam",
-    "test:webcam": "ng test @mw-angular/webcam --watch=false --browsers=ChromeHeadless",
+    "------------------ media lib ------------------": "",
+    "build:media": "rimraf dist/mw-angular/media && ng build @mw-angular/media",
+    "build-watch:media": "rimraf dist/mw-angular/media && ng build @mw-angular/media --watch",
+    "lint:media": "ng lint @mw-angular/media",
+    "test:media": "ng test @mw-angular/media --watch=false --browsers=ChromeHeadless",
     "------------------ common ------------------": "",
     "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
-    "build-libs": "npm run build:complex-filter && npm run build:webcam"
+    "build-libs": "npm run build:complex-filter && npm run build:media"
   },
   "private": true,
   "dependencies": {
