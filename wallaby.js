@@ -37,9 +37,17 @@ module.exports = function (wallaby) {
         'node_modules'
       ],
       alias: {
+        '@mw-angular/env': path.join(
+          wallaby.projectCacheDir,
+          'libs/mw-angular/env/src/public-api.ts'
+        ),
         '@mw-angular/complex-filter': path.join(
           wallaby.projectCacheDir,
-          'libs/mw-angular/complex-filter/src/src/public-api.ts'
+          'libs/mw-angular/complex-filter/src/public-api.ts'
+        ),
+        '@mw-angular/media': path.join(
+          wallaby.projectCacheDir,
+          'libs/mw-angular/media/src/public-api.ts'
         )
       }
     },
@@ -66,8 +74,6 @@ module.exports = function (wallaby) {
 
     tests: [
       {pattern: 'apps/**/*spec.ts', load: false},
-      {pattern: 'apps/**/*e2e-spec.ts', ignore: true},
-
       {pattern: 'libs/**/*spec.ts', load: false},
     ],
 
