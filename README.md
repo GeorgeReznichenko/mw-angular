@@ -16,8 +16,7 @@
 - storybook
 - styles and stylePreprocessorOptions
 - configure environments
-- ssr
 - app shell
-- npm scripts
+- common npm scripts and hooks
 - prettier
 - scss fix

@@ -11,6 +11,11 @@
     "build-ssr:sandbox": "ng run sandbox:server --delete-output-path",
     "webpack:sandbox": "webpack --config ./apps/sandbox/webpack.server.config.js --progress --colors && node dist/sandbox/prerender.js",
     "start-ssr:sandbox": "node dist/sandbox/server.js",
+    "lint:sandbox": "ng lint sandbox",
+    "test:sandbox": "ng test sandbox --watch=false --browsers=ChromeHeadless",
+    "test-watch:sandbox": "ng test crm",
+    "e2e:sandbox": "ng run sandbox-e2e:e2e --port 6200",
+    "analize:sandbox": "npm run build:sandbox -- --configuration production --stats-json && webpack-bundle-analyzer dist/sandbox/browser/stats.json",
     "------------------ env lib ------------------": "",
     "build:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env",
     "build-watch:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env --watch",
@@ -83,6 +88,7 @@
     "tslint": "~5.11.0",
     "typescript": "~3.2.2",
     "wallaby-webpack": "^3.9.15",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.1.0"
   }
 }

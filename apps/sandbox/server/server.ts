@@ -17,7 +17,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5200;
 const DIST_FOLDER = join(process.cwd(), 'dist/sandbox/browser');
 const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
 const NOT_FOUND_CONTAINER_NAME = 'app-not-found-container';
