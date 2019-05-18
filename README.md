@@ -8,6 +8,10 @@
 - change "newProjectRoot": "libs",
 - npx ng generate library @mw-angular/name --prefix=mw
 
+## SERVE
+- for serving on device use "npm run start-no-libs-for-devices:sandbox" and open
+  from your ip, i.e. https://192.168.2.70:4200
+
 ## TODO
 - hmr
 - configure environments

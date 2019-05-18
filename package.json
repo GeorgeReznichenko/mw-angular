@@ -4,6 +4,7 @@
   "scripts": {
     "------------------ sandbox ------------------": "",
     "start-no-libs:sandbox": "ng serve sandbox --port 4200",
+    "start-no-libs-for-devices:sandbox": "ng serve sandbox --host 0.0.0.0 --port 4200 --ssl",
     "start:sandbox": "npm run build-libs && npm run start-no-libs:sandbox",
     "------------------ complex-filter lib ------------------": "",
     "build:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter",
