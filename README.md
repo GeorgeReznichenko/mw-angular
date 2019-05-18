@@ -5,7 +5,7 @@
 - npx ng generate application name --routing=true --style=scss
 
 ## LIBS
-- change "newProjectRoot": "libs",
+- change "newProjectRoot": "libs" in angular.json,
 - npx ng generate library @mw-angular/name --prefix=mw
 
 ## SERVE
