@@ -19,6 +19,12 @@
       "dom"
     ],
     "paths": {
+      "@mw-angular/env": [
+        "dist/mw-angular/env"
+      ],
+      "@mw-angular/env/*": [
+        "dist/mw-angular/env/*"
+      ],
       "@mw-angular/complex-filter": [
         "dist/mw-angular/complex-filter"
       ],
@@ -30,12 +36,6 @@
       ],
       "@mw-angular/media/*": [
         "dist/mw-angular/media/*"
-      ],
-      "@mw-angular/env": [
-        "dist/mw-angular/env"
-      ],
-      "@mw-angular/env/*": [
-        "dist/mw-angular/env/*"
       ]
     }
   }

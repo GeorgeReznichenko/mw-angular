@@ -135,6 +135,41 @@
         }
       }
     },
+    "@mw-angular/env": {
+      "root": "libs/mw-angular/env",
+      "sourceRoot": "libs/mw-angular/env/src",
+      "projectType": "library",
+      "prefix": "mw",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/mw-angular/env/tsconfig.lib.json",
+            "project": "libs/mw-angular/env/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mw-angular/env/src/test.ts",
+            "tsConfig": "libs/mw-angular/env/tsconfig.spec.json",
+            "karmaConfig": "libs/mw-angular/env/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/mw-angular/env/tsconfig.lib.json",
+              "libs/mw-angular/env/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "@mw-angular/complex-filter": {
       "root": "libs/mw-angular/complex-filter",
       "sourceRoot": "libs/mw-angular/complex-filter/src",
@@ -197,41 +232,6 @@
             "tsConfig": [
               "libs/mw-angular/media/tsconfig.lib.json",
               "libs/mw-angular/media/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "@mw-angular/env": {
-      "root": "libs/mw-angular/env",
-      "sourceRoot": "libs/mw-angular/env/src",
-      "projectType": "library",
-      "prefix": "mw",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "libs/mw-angular/env/tsconfig.lib.json",
-            "project": "libs/mw-angular/env/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "libs/mw-angular/env/src/test.ts",
-            "tsConfig": "libs/mw-angular/env/tsconfig.spec.json",
-            "karmaConfig": "libs/mw-angular/env/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/mw-angular/env/tsconfig.lib.json",
-              "libs/mw-angular/env/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

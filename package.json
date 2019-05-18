@@ -6,6 +6,11 @@
     "start-no-libs:sandbox": "ng serve sandbox --port 4200",
     "start-no-libs-for-devices:sandbox": "ng serve sandbox --host 0.0.0.0 --port 4200 --ssl",
     "start:sandbox": "npm run build-libs && npm run start-no-libs:sandbox",
+    "------------------ env lib ------------------": "",
+    "build:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env",
+    "build-watch:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env --watch",
+    "lint:env": "ng lint @mw-angular/env",
+    "test:env": "ng test @mw-angular/env --watch=false --browsers=ChromeHeadless",
     "------------------ complex-filter lib ------------------": "",
     "build:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter",
     "build-watch:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter --watch",
@@ -18,7 +23,7 @@
     "test:media": "ng test @mw-angular/media --watch=false --browsers=ChromeHeadless",
     "------------------ common ------------------": "",
     "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
-    "build-libs": "npm run build:complex-filter && npm run build:media"
+    "build-libs": "npm run build:env && npm run build:complex-filter && npm run build:media"
   },
   "private": true,
   "dependencies": {
