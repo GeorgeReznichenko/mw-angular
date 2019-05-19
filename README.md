@@ -4,11 +4,9 @@ This is the collection of useful libraries for Angular projects.
 
 ## Available libraries
 
-| Library                     | Docs         |
-|-----------------------------|--------------|
-| @mw-angular/core            | [Docs][1]    |
+### [@mw-angular/core](https://github.com/misticwonder/mw-angular/tree/production/libs/mw-angular/core#readme)
 
-[1]: https://github.com/misticwonder/mw-angular/tree/production/libs/mw-angular/core#readme
+Includes widely used services for Angular projects. 
 
 ## Contributing
 
