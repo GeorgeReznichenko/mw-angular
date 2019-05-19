@@ -2,16 +2,12 @@
 
 [![npm version](https://badge.fury.io/js/%40mw-angular%2Fcore.svg)](https://badge.fury.io/js/%40mw-angular%2Fcore)
 
-This is the core library from "Most Wanted Angular Modules". 
-These include widely used services for Angular projects.
-
-#### Quick links
-
-[Contributing](https://github.com/misticwonder/mw-angular/blob/production/CONTRIBUTING.md)
+This is the core library from [Most Wanted Angular Libs](https://github.com/misticwonder/mw-angular#readme). 
+Includes widely used services for Angular projects.
 
 ## Getting Started
 
-Install library
+Use the package manager to install library.
 ```
 npm install @mw-angular/core
 ```
@@ -36,9 +32,10 @@ npm install @mw-angular/core
 
 ## Contributing
 
-If you'd like to contribute, please read 
-[CONTRIBUTING.md](https://github.com/misticwonder/mw-angular/blob/production/CONTRIBUTING.md) 
-for details.
+Pull requests to the [repository](https://github.com/misticwonder/mw-angular) are welcome. 
+For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
 
 ## Authors
 
@@ -46,4 +43,4 @@ for details.
 
 ## License
 
-This library is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This library is licensed under the MIT License - see the [LICENSE](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE) for details

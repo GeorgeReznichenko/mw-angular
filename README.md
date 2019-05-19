@@ -1,23 +1,18 @@
-# Most Wanted Angular Modules
+# Most Wanted Angular Libs
 
-## APPS
-- change "newProjectRoot": "apps",
-- npx ng generate application name --routing=true --style=scss
+This is the collection of useful libraries for Angular projects.
 
-## LIBS
-- change "newProjectRoot": "libs" in angular.json,
-- npx ng generate library @mw-angular/name --prefix=mw
-- add license file and info to package.json
+## Available libraries
 
-## SERVE
-- for serving on device use "npm run start-no-libs-for-devices:sandbox" and open
-  from your ip, i.e. https://192.168.2.70:4200
+| Library                     | Docs         |
+|-----------------------------|--------------|
+| @mw-angular/core            | [Docs][1]    |
 
-## TODO
-- storybook
-- styles and stylePreprocessorOptions
-- configure environments
-- app shell
-- common npm scripts and hooks
-- prettier
-- scss fix
+[1]: https://github.com/misticwonder/mw-angular/tree/production/libs/mw-angular/core#readme
+
+## Contributing
+
+Pull requests are welcome. 
+For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
