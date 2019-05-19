@@ -16,11 +16,11 @@
     "test-watch:sandbox": "ng test crm",
     "e2e:sandbox": "ng run sandbox-e2e:e2e --port 6200",
     "analize:sandbox": "npm run build:sandbox -- --configuration production --stats-json && webpack-bundle-analyzer dist/sandbox/browser/stats.json",
-    "------------------ env lib ------------------": "",
-    "build:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env",
-    "build-watch:env": "rimraf dist/mw-angular/env && ng build @mw-angular/env --watch",
-    "lint:env": "ng lint @mw-angular/env",
-    "test:env": "ng test @mw-angular/env --watch=false --browsers=ChromeHeadless",
+    "------------------ core lib ------------------": "",
+    "build:core": "rimraf dist/mw-angular/core && ng build @mw-angular/core",
+    "build-watch:core": "rimraf dist/mw-angular/core && ng build @mw-angular/core --watch",
+    "lint:core": "ng lint @mw-angular/core",
+    "test:core": "ng test @mw-angular/core --watch=false --browsers=ChromeHeadless",
     "------------------ complex-filter lib ------------------": "",
     "build:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter",
     "build-watch:complex-filter": "rimraf dist/mw-angular/complex-filter && ng build @mw-angular/complex-filter --watch",
@@ -33,7 +33,7 @@
     "test:media": "ng test @mw-angular/media --watch=false --browsers=ChromeHeadless",
     "------------------ common ------------------": "",
     "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
-    "build-libs": "npm run build:env && npm run build:complex-filter && npm run build:media"
+    "build-libs": "npm run build:core && npm run build:complex-filter && npm run build:media"
   },
   "private": true,
   "dependencies": {

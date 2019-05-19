@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "@mw-angular/env": [
-        "dist/mw-angular/env"
+      "@mw-angular/core": [
+        "dist/mw-angular/core"
       ],
-      "@mw-angular/env/*": [
-        "dist/mw-angular/env/*"
+      "@mw-angular/core/*": [
+        "dist/mw-angular/core/*"
       ],
       "@mw-angular/complex-filter": [
         "dist/mw-angular/complex-filter"
