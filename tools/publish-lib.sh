@@ -5,7 +5,7 @@ basePath="$(pwd)"
 
 if [[ "$lib" != "" ]] ; then
     cd libs/"$lib"
-    npm version patch
+    npm version patch -m "Publish version %s"
     git push origin HEAD
 
     cd "$basePath"
