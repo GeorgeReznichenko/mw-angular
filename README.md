@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="300" src="https://raw.githubusercontent.com/misticwonder/mw-angular/development/most-wanted-angular-libs.png">
+</p>
+
 # Most Wanted Angular Libs
 
 This is the collection of useful libraries for Angular projects.
