@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" height="200" src="https://raw.githubusercontent.com/misticwonder/mw-angular/production/logos/angular-logo.svg">
+  <img width="250" height="250" src="https://raw.githubusercontent.com/misticwonder/mw-angular/production/logos/angular-logo.png">
 </p>
 
 # Most Wanted Angular Libs
