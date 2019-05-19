@@ -21,3 +21,6 @@
 - common npm scripts and hooks
 - prettier
 - scss fix
+
+- docs and readme for core
+- image for github
