@@ -2,11 +2,16 @@
   "name": "@mw-angular/media",
   "version": "0.0.1",
   "description": "MW Angular Media",
-  "author": "Andrey Korovin <misticwonder@gmail.com>",
+  "keywords": [
+    "angular",
+    "library"
+  ],
   "license": "MIT",
+  "author": "Andrey Korovin <misticwonder@gmail.com>",
+  "homepage": "https://github.com/misticwonder/mw-angular/tree/production/libs/mw-angular/media#readme",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/misticwonder/mw-angular.git",
+    "type": "git",
+    "url": "https://github.com/misticwonder/mw-angular.git",
     "directory": "libs/mw-angular/media"
   },
   "peerDependencies": {

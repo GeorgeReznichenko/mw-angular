@@ -2,11 +2,16 @@
   "name": "@mw-angular/core",
   "version": "0.0.9",
   "description": "MW Angular Core",
-  "author": "Andrey Korovin <misticwonder@gmail.com>",
+  "keywords": [
+    "angular",
+    "library"
+  ],
   "license": "MIT",
+  "author": "Andrey Korovin <misticwonder@gmail.com>",
+  "homepage": "https://github.com/misticwonder/mw-angular/tree/production/libs/mw-angular/core#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/misticwonder",
+    "url": "https://github.com/misticwonder/mw-angular.git",
     "directory": "libs/mw-angular/core"
   },
   "peerDependencies": {

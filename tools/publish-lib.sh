@@ -2,8 +2,9 @@
 
 lib="$1"
 basePath="$(pwd)"
+branch="$(git rev-parse --abbrev-ref HEAD)"
 
-if [[ "$lib" != "" ]] ; then
+if [[ "$lib" != "" && "$branch" == "production" ]] ; then
     cd libs/"$lib"
     npm version patch
 
@@ -15,6 +16,6 @@ if [[ "$lib" != "" ]] ; then
 
     npm publish dist/"$lib" --access public
 else
-    echo "param errors"
+    echo "param errors or git branch is not production"
     exit 1
 fi

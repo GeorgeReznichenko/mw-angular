@@ -2,8 +2,8 @@
   "name": "mw-angular",
   "version": "0.0.5",
   "description": "MW Angular Modules Development Kit",
+  "private": true,
   "author": "Andrey Korovin <misticwonder@gmail.com>",
-  "license": "MIT",
   "homepage": "https://github.com/misticwonder/mw-angular#readme",
   "repository": {
     "type": "git",
@@ -41,7 +41,6 @@
     "build-libs": "./tools/build-all-libs.sh",
     "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\""
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.15",
     "@angular/cdk": "^7.3.7",
