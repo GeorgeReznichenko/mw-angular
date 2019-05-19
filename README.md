@@ -7,6 +7,7 @@
 ## LIBS
 - change "newProjectRoot": "libs" in angular.json,
 - npx ng generate library @mw-angular/name --prefix=mw
+- add license file and info to package.json
 
 ## SERVE
 - for serving on device use "npm run start-no-libs-for-devices:sandbox" and open
