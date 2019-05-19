@@ -13,8 +13,7 @@ if [[ "$lib" != "" ]] ; then
 
     ./tools/build-lib.sh "$lib"
 
-    cd dist/"$lib"
-    npm publish --access public
+    npm publish dist/"$lib" --access public
 else
     echo "param errors"
     exit 1
