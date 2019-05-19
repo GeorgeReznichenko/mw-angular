@@ -24,3 +24,4 @@
 
 - docs and readme for core
 - image for github
+- link to npmjs
