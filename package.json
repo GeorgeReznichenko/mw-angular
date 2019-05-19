@@ -36,7 +36,8 @@
     "publish:media": "./tools/publish-lib.sh mw-angular/media",
     "------------------ common ------------------": "",
     "build-libs": "./tools/build-all-libs.sh",
-    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\""
+    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@angular/animations": "^7.2.15",
@@ -66,10 +67,13 @@
     "@angular/cli": "~7.3.8",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "^7.2.14",
+    "@babel/core": "^7.4.4",
+    "@storybook/angular": "^5.0.11",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.10.48",
     "angular2-template-loader": "^0.6.2",
+    "babel-loader": "^8.0.6",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
