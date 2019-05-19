@@ -6,7 +6,7 @@ if [[ "$lib" != "" ]] ; then
     npm version patch
     ./tools/build-lib.sh "$lib"
     cd dist/"$lib"
-    npm publish
+    npm publish --access public
 else
     echo "param errors"
     exit 1
