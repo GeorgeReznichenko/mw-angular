@@ -23,3 +23,4 @@
 - scss fix
 
 - docs and readme for core
+- fix links everywhere to mw-angular.com
