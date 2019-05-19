@@ -23,12 +23,12 @@ npm install @mw-angular/core
 | PlatformService             | [Docs][5]    |
 | RequestService              | [Docs][6]    |
 
-[1]: https://google.com
-[2]: https://google.com
-[3]: https://google.com
-[4]: https://google.com
-[5]: https://google.com
-[6]: https://google.com
+[1]: https://mw-angular.com
+[2]: https://mw-angular.com
+[3]: https://mw-angular.com
+[4]: https://mw-angular.com
+[5]: https://mw-angular.com
+[6]: https://mw-angular.com
 
 ## Contributing
 
