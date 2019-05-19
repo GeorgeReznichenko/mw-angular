@@ -6,7 +6,7 @@ basePath="$(pwd)"
 if [[ "$lib" != "" ]] ; then
     cd libs/"$lib"
     npm version patch -m "Publish version %s"
-    git push origin HEAD
+    git push && git push --tags
 
     cd "$basePath"
     ./tools/build-lib.sh "$lib"
