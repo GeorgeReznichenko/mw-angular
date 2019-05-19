@@ -5,6 +5,8 @@ basePath="$(pwd)"
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
 if [[ "$lib" != "" && "$branch" == "production" ]] ; then
+    ./tools/check-lib.sh "$lib"
+
     cd libs/"$lib"
     npm version patch
 
