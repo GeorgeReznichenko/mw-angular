@@ -27,3 +27,4 @@
 
 ### IDEAS FOR COMPONENTS
 - https://material.io/design/sound/
+- reusable pipe from https://codeburst.io/angular-bad-practices-eab0e594ce92
