@@ -24,3 +24,6 @@
 
 - docs and readme for core
 - fix links everywhere to mw-angular.com
+
+### IDEAS FOR COMPONENTS
+- https://material.io/design/sound/
