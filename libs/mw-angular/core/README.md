@@ -9,7 +9,7 @@ Includes widely used services for Angular projects.
 
 Use the package manager to install library.
 ```
-npm install @mw-angular/core
+$ npm install @mw-angular/core
 ```
 
 #### Available features
@@ -43,4 +43,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-This library is licensed under the MIT License - see the [LICENSE](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE) for details
+>You can check out the full license [here](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE)
+
+This project is licensed under the terms of the **MIT** license.
