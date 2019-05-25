@@ -20,8 +20,7 @@
 - app shell
 - common npm scripts and hooks
 - prettier
-- scss fix
-
+- travis and deploy
 - links in readme for core
 
 ### IDEAS FOR COMPONENTS

@@ -36,7 +36,8 @@
     "publish:media": "./tools/publish-lib.sh mw-angular/media",
     "------------------ common ------------------": "",
     "build-libs": "./tools/build-all-libs.sh",
-    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\""
+    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
+    "lint-scss-fix": "npm run lint-scss -- --fix"
   },
   "dependencies": {
     "@angular/animations": "^7.2.15",
