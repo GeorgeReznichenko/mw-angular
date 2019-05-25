@@ -27,8 +27,29 @@
               "apps/site/src/favicon.ico",
               "apps/site/src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/site/src/scss/partials",
+                "apps/site/src/scss/vendors"
+              ]
+            },
             "styles": [
-              "apps/site/src/styles.scss"
+              {
+                "input": "apps/site/src/scss/bootstrap.scss",
+                "bundleName": "bootstrap",
+                "lazy": true
+              },
+              {
+                "input": "apps/site/src/scss/themes/light-theme.scss",
+                "bundleName": "light-theme",
+                "lazy": true
+              },
+              {
+                "input": "apps/site/src/scss/themes/dark-theme.scss",
+                "bundleName": "dark-theme",
+                "lazy": true
+              },
+              "apps/site/src/scss/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true

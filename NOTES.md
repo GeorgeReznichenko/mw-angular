@@ -14,8 +14,8 @@
   from your ip, i.e. https://192.168.2.70:4200
 
 ## TODO
+- set lang for html tag
 - storybook
-- styles and stylePreprocessorOptions
 - configure environments
 - app shell
 - common npm scripts and hooks

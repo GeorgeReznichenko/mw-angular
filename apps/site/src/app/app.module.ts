@@ -1,24 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ComplexFilterModule, MaterialComplexFilterElementsModule } from '@mw-angular/complex-filter';
-import { MediaModule } from '@mw-angular/media';
+import { AppContainerComponent } from './app-container.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
-    AppRoutingModule,
     BrowserAnimationsModule,
-    ComplexFilterModule,
-    MaterialComplexFilterElementsModule,
-    MediaModule,
+    AppRoutingModule,
   ],
   declarations: [
-    AppComponent,
+    AppContainerComponent,
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppContainerComponent],
 })
 export class AppModule {
 }
