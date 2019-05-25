@@ -35,16 +35,17 @@
     "build-lib-watch:media": "./tools/build-lib-watch.sh mw-angular/media",
     "publish:media": "./tools/publish-lib.sh mw-angular/media",
     "------------------ common ------------------": "",
-    "build-libs": "./tools/build-all-libs.sh",
-    "check-libs": "./tools/check-all-libs.sh",
-    "lint-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
-    "lint-scss-fix": "npm run lint-scss -- --fix",
+    "build-all-libs": "./tools/build-all-libs.sh",
+    "check-all-libs": "./tools/check-all-libs.sh",
+    "lint-all-scss": "stylelint \"apps/**/*.scss\" && stylelint \"libs/**/*.scss\"",
+    "lint-all-scss-fix": "npm run lint-scss -- --fix",
     "prettier": "prettier --write \"{apps,libs}/**/*.ts\"",
     "prettier:check": "prettier --check \"{apps,libs}/**/*.ts\""
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "./tools/pre-push.sh"
     }
   },
   "dependencies": {

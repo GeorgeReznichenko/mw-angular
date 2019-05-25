@@ -22,7 +22,6 @@
 - storybook
 - configure environments
 - app shell
-- common npm scripts and hooks
 - travis and deploy
 - links in readme for core
 
