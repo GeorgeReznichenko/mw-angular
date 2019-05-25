@@ -4,16 +4,8 @@ import { NgModule } from '@angular/core';
 import { MaterialComplexFilterElementOverlayComponent } from './components/material-complex-filter-element-overlay/material-complex-filter-element-overlay.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    OverlayModule,
-  ],
-  declarations: [
-    MaterialComplexFilterElementOverlayComponent,
-  ],
-  exports: [
-    MaterialComplexFilterElementOverlayComponent,
-  ],
+  imports: [CommonModule, OverlayModule],
+  declarations: [MaterialComplexFilterElementOverlayComponent],
+  exports: [MaterialComplexFilterElementOverlayComponent],
 })
-export class MaterialComplexFilterElementOverlayModule {
-}
+export class MaterialComplexFilterElementOverlayModule {}

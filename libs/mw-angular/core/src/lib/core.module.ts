@@ -9,10 +9,10 @@ export class CoreModule {
     }
   }
 
-  static forRoot(environment: {[key: string]: any}): ModuleWithProviders {
+  static forRoot(environment: { [key: string]: any }): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [{provide: ENVIRONMENT, useValue: environment}],
+      providers: [{ provide: ENVIRONMENT, useValue: environment }],
     };
   }
 }

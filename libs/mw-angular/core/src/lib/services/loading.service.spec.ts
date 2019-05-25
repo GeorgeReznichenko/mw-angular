@@ -176,8 +176,7 @@ describe('LoadingService', () => {
       const onNextEventSpy = jasmine.createSpy('onNextEventSpy');
       const onCompleteEventSpy = jasmine.createSpy('onCompleteEventSpy');
 
-      service.getIsLoading().subscribe(onNextEventSpy, () => {
-      }, onCompleteEventSpy);
+      service.getIsLoading().subscribe(onNextEventSpy, () => {}, onCompleteEventSpy);
       tick(debounceTime);
       service.start();
       tick(debounceTime);

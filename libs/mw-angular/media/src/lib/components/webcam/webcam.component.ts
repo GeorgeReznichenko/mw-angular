@@ -7,6 +7,5 @@ import { AfterViewInit, ChangeDetectionStrategy, Component } from '@angular/core
   styleUrls: ['./webcam.component.scss'],
 })
 export class WebcamComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 }

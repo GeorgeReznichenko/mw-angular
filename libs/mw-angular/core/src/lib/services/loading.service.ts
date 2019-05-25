@@ -6,7 +6,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class LoadingService {
-  private isLoadingSubjectsPool: {[tag: string]: BehaviorSubject<number>} = {};
+  private isLoadingSubjectsPool: { [tag: string]: BehaviorSubject<number> } = {};
 
   getIsLoading(tag = 'general'): Observable<boolean> {
     this.checkAndInitIsLoadingSubject(tag);
@@ -25,8 +25,7 @@ export class LoadingService {
       subscriber.next();
       subscriber.complete();
 
-      return () => {
-      };
+      return () => {};
     });
   }
 

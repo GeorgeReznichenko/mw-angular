@@ -3,5 +3,4 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class MediaDevicesService {
-}
+export class MediaDevicesService {}

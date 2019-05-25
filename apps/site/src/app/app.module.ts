@@ -5,15 +5,8 @@ import { AppContainerComponent } from './app-container.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [
-    BrowserModule.withServerTransition({appId: 'serverApp'}),
-    BrowserAnimationsModule,
-    AppRoutingModule,
-  ],
-  declarations: [
-    AppContainerComponent,
-  ],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), BrowserAnimationsModule, AppRoutingModule],
+  declarations: [AppContainerComponent],
   bootstrap: [AppContainerComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

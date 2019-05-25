@@ -4,18 +4,13 @@ import { ComplexFilterComponentDataModel } from '../entities/complex-filter-comp
 import { COMPLEX_FILTER_COMPONENT_DATA } from '../entities/complex-filter-component-data.token';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ComplexFilterPortalCreationService {
-  constructor(private injector: Injector) {
-  }
+  constructor(private injector: Injector) {}
 
   createPortal(component: ComponentType<any>, data: ComplexFilterComponentDataModel = {}): ComponentPortal<any> {
-    return new ComponentPortal(
-      component,
-      null,
-      this.createInjector(data),
-    );
+    return new ComponentPortal(component, null, this.createInjector(data));
   }
 
   private createInjector(data: ComplexFilterComponentDataModel): PortalInjector {

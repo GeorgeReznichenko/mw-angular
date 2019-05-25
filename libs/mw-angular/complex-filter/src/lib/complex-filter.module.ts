@@ -5,17 +5,8 @@ import { ComplexFilterComponent } from './complex-filter.component';
 import { ComplexFilterInnerComponent } from './components/complex-filter-inner/complex-filter-inner.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    PortalModule,
-  ],
-  declarations: [
-    ComplexFilterComponent,
-    ComplexFilterInnerComponent,
-  ],
-  exports: [
-    ComplexFilterComponent,
-  ],
+  imports: [CommonModule, PortalModule],
+  declarations: [ComplexFilterComponent, ComplexFilterInnerComponent],
+  exports: [ComplexFilterComponent],
 })
-export class ComplexFilterModule {
-}
+export class ComplexFilterModule {}

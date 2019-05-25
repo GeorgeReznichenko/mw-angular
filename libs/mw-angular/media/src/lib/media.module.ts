@@ -3,15 +3,8 @@ import { NgModule } from '@angular/core';
 import { WebcamComponent } from './components/webcam/webcam.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    WebcamComponent,
-  ],
-  exports: [
-    WebcamComponent,
-  ],
+  imports: [CommonModule],
+  declarations: [WebcamComponent],
+  exports: [WebcamComponent],
 })
-export class MediaModule {
-}
+export class MediaModule {}

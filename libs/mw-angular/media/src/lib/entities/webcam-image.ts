@@ -1,4 +1,3 @@
 export class WebcamImage {
-  public constructor(public imageAsDataUrl: string) {
-  }
+  public constructor(public imageAsDataUrl: string) {}
 }

@@ -8,9 +8,7 @@ import { ComplexFilterPortalCreationService } from './services/complex-filter-po
 @Component({
   selector: 'mw-complex-filter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [
-    ComplexFilterPortalCreationService,
-  ],
+  viewProviders: [ComplexFilterPortalCreationService],
   template: `
     <mw-complex-filter-inner
       [defaultPortalModels]="defaultPortalModelsSubject | async"
@@ -23,20 +21,17 @@ export class ComplexFilterComponent {
   dynamicPortalModelsSubject = new BehaviorSubject<ComplexFilterPortalModel[]>([]);
 
   @Input() set config(config: ComplexFilterConfigModel) {
-    this.defaultPortalModelsSubject.next(config.defaultFilters
-      .map((componentModel: ComplexFilterComponentModel) => this.buildPortalModel(componentModel)));
+    this.defaultPortalModelsSubject.next(
+      config.defaultFilters.map((componentModel: ComplexFilterComponentModel) => this.buildPortalModel(componentModel)),
+    );
     this.dynamicPortalModelsSubject.next([]);
   }
 
-  constructor(private complexFilterPortalCreationService: ComplexFilterPortalCreationService) {
-  }
+  constructor(private complexFilterPortalCreationService: ComplexFilterPortalCreationService) {}
 
   private buildPortalModel(componentModel: ComplexFilterComponentModel): ComplexFilterPortalModel {
     return {
-      portal: this.complexFilterPortalCreationService.createPortal(
-        componentModel.component,
-        componentModel.data,
-      ),
+      portal: this.complexFilterPortalCreationService.createPortal(componentModel.component, componentModel.data),
     };
   }
 }

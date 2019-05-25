@@ -5,8 +5,7 @@ import { ENVIRONMENT } from '../tokens/environment.token';
   providedIn: 'root',
 })
 export class EnvironmentService {
-  constructor(@Inject(ENVIRONMENT) private environment: any) {
-  }
+  constructor(@Inject(ENVIRONMENT) private environment: any) {}
 
   getValue(key: string, defaultValue?: any): any {
     if (this.environment[key] === undefined && defaultValue === undefined) {

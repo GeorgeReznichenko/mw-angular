@@ -23,15 +23,16 @@ const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
 const NOT_FOUND_CONTAINER_NAME = 'app-not-found-container';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('../../../dist/site/server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../dist/site/server/main');
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
-app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
-  providers: [
-    provideModuleMap(LAZY_MODULE_MAP),
-  ],
-}));
+app.engine(
+  'html',
+  ngExpressEngine({
+    bootstrap: AppServerModuleNgFactory,
+    providers: [provideModuleMap(LAZY_MODULE_MAP)],
+  }),
+);
 
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
@@ -46,9 +47,12 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
 });
 
 // Serve static files
-app.get('*.*', express.static(DIST_FOLDER, {
-  maxAge: '1y',
-}));
+app.get(
+  '*.*',
+  express.static(DIST_FOLDER, {
+    maxAge: '1y',
+  }),
+);
 
 // Serve skipped routes
 if (SKIPPED_ROUTES.length > 0) {
@@ -85,7 +89,7 @@ if (PRERENDERED_ROUTES.length > 0) {
 
 // Serve dynamically rendered routes
 app.get('*', (req: express.Request, res: express.Response) => {
-  res.render(INDEX_FILE_PATH, {req, res}, (err, html) => {
+  res.render(INDEX_FILE_PATH, { req, res }, (err, html) => {
     if (err) {
       throw new Error(`Server render fails.`);
     } else {

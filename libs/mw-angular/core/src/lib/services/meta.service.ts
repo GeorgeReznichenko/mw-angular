@@ -9,8 +9,7 @@ import { EnvironmentService } from './environment.service';
 export class MetaService {
   private pageTitleSubject = new BehaviorSubject<string>('');
 
-  constructor(private environmentService: EnvironmentService, private title: Title) {
-  }
+  constructor(private environmentService: EnvironmentService, private title: Title) {}
 
   setTitle(title: string): any {
     const prefix = this.environmentService.getValue('titlePrefix', '');

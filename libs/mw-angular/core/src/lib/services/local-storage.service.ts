@@ -5,8 +5,7 @@ import { PlatformService } from './platform.service';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  constructor(protected platformService: PlatformService) {
-  }
+  constructor(protected platformService: PlatformService) {}
 
   protected static serialize(data: any): string {
     return JSON.stringify(data);

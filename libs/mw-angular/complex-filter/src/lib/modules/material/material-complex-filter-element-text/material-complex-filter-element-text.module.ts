@@ -12,12 +12,7 @@ import { MaterialComplexFilterElementTextComponent } from './components/material
     MaterialComplexFilterElementLabelModule,
     MaterialComplexFilterElementOverlayModule,
   ],
-  declarations: [
-    MaterialComplexFilterElementTextComponent,
-  ],
-  entryComponents: [
-    MaterialComplexFilterElementTextComponent,
-  ],
+  declarations: [MaterialComplexFilterElementTextComponent],
+  entryComponents: [MaterialComplexFilterElementTextComponent],
 })
-export class MaterialComplexFilterElementTextModule {
-}
+export class MaterialComplexFilterElementTextModule {}
