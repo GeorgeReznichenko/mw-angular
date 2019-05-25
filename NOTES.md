@@ -24,6 +24,7 @@
 - app shell
 - travis and deploy
 - links in readme for core
+- e2e for CI
 
 ### IDEAS FOR COMPONENTS
 

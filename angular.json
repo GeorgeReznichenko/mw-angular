@@ -22,16 +22,9 @@
             "main": "apps/site/src/main.ts",
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.app.json",
-            "assets": [
-              "apps/site/src/robots.txt",
-              "apps/site/src/favicon.ico",
-              "apps/site/src/assets"
-            ],
+            "assets": ["apps/site/src/robots.txt", "apps/site/src/favicon.ico", "apps/site/src/assets"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "apps/site/src/scss/partials",
-                "apps/site/src/scss/vendors"
-              ]
+              "includePaths": ["apps/site/src/scss/partials", "apps/site/src/scss/vendors"]
             },
             "styles": [
               {
@@ -55,6 +48,9 @@
             "es5BrowserSupport": true
           },
           "configurations": {
+            "serve": {
+              "extractCss": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -108,11 +104,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "site:build"
+            "browserTarget": "site:build:serve"
           },
           "configurations": {
             "production": {
               "browserTarget": "site:build:production"
+            },
+            "development": {
+              "browserTarget": "site:build:development"
             }
           }
         },
@@ -129,26 +128,36 @@
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.spec.json",
             "karmaConfig": "apps/site/karma.conf.js",
+            "assets": ["apps/site/src/robots.txt", "apps/site/src/favicon.ico", "apps/site/src/assets"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/site/src/scss/partials", "apps/site/src/scss/vendors"]
+            },
             "styles": [
-              "apps/site/src/styles.scss"
+              {
+                "input": "apps/site/src/scss/bootstrap.scss",
+                "bundleName": "bootstrap",
+                "lazy": true
+              },
+              {
+                "input": "apps/site/src/scss/themes/light-theme.scss",
+                "bundleName": "light-theme",
+                "lazy": true
+              },
+              {
+                "input": "apps/site/src/scss/themes/dark-theme.scss",
+                "bundleName": "dark-theme",
+                "lazy": true
+              },
+              "apps/site/src/scss/styles.scss"
             ],
-            "scripts": [],
-            "assets": [
-              "apps/site/src/favicon.ico",
-              "apps/site/src/assets"
-            ]
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/site/tsconfig.app.json",
-              "apps/site/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["apps/site/tsconfig.app.json", "apps/site/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         },
         "server": {
@@ -175,6 +184,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "site:serve:production"
+            },
+            "development": {
+              "devServerTarget": "site:serve:production"
             }
           }
         },
@@ -182,9 +194,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/site-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -213,13 +223,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/mw-angular/core/tsconfig.lib.json",
-              "libs/mw-angular/core/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["libs/mw-angular/core/tsconfig.lib.json", "libs/mw-angular/core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -252,9 +257,7 @@
               "libs/mw-angular/complex-filter/tsconfig.lib.json",
               "libs/mw-angular/complex-filter/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -283,13 +286,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/mw-angular/media/tsconfig.lib.json",
-              "libs/mw-angular/media/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["libs/mw-angular/media/tsconfig.lib.json", "libs/mw-angular/media/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
