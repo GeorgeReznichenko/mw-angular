@@ -39,7 +39,7 @@ Please make sure to update tests as appropriate.
 
 ## Authors
 
-* **Andrey Korovin**
+* **Andrey Korovin** - *misticwonder@gmail.com*
 
 ## License
 
