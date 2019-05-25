@@ -4,8 +4,8 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'none',
   entry: {
-    server: './apps/sandbox/server/server.ts',
-    prerender: './apps/sandbox/server/prerender.ts',
+    server: './apps/site/server/server.ts',
+    prerender: './apps/site/server/prerender.ts',
   },
   target: 'node',
   resolve: {extensions: ['.ts', '.js']},
@@ -13,7 +13,7 @@ module.exports = {
     minimize: false
   },
   output: {
-    path: path.join(__dirname, '../../dist/sandbox'),
+    path: path.join(__dirname, '../../dist/site'),
     filename: '[name].js'
   },
   module: {

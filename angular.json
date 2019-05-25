@@ -3,9 +3,9 @@
   "version": 1,
   "newProjectRoot": "libs",
   "projects": {
-    "sandbox": {
-      "root": "apps/sandbox/",
-      "sourceRoot": "apps/sandbox/src",
+    "site": {
+      "root": "apps/site/",
+      "sourceRoot": "apps/site/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -17,18 +17,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sandbox/browser",
-            "index": "apps/sandbox/src/index.html",
-            "main": "apps/sandbox/src/main.ts",
-            "polyfills": "apps/sandbox/src/polyfills.ts",
-            "tsConfig": "apps/sandbox/tsconfig.app.json",
+            "outputPath": "dist/site/browser",
+            "index": "apps/site/src/index.html",
+            "main": "apps/site/src/main.ts",
+            "polyfills": "apps/site/src/polyfills.ts",
+            "tsConfig": "apps/site/tsconfig.app.json",
             "assets": [
-              "apps/sandbox/src/robots.txt",
-              "apps/sandbox/src/favicon.ico",
-              "apps/sandbox/src/assets"
+              "apps/site/src/robots.txt",
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
             ],
             "styles": [
-              "apps/sandbox/src/styles.scss"
+              "apps/site/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -37,8 +37,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/sandbox/src/environments/environment.ts",
-                  "with": "apps/sandbox/src/environments/environment.production.ts"
+                  "replace": "apps/site/src/environments/environment.ts",
+                  "with": "apps/site/src/environments/environment.production.ts"
                 }
               ],
               "optimization": true,
@@ -61,8 +61,8 @@
             "development": {
               "fileReplacements": [
                 {
-                  "replace": "apps/sandbox/src/environments/environment.ts",
-                  "with": "apps/sandbox/src/environments/environment.development.ts"
+                  "replace": "apps/site/src/environments/environment.ts",
+                  "with": "apps/site/src/environments/environment.development.ts"
                 }
               ],
               "optimization": true,
@@ -87,34 +87,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sandbox:build"
+            "browserTarget": "site:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sandbox:build:production"
+              "browserTarget": "site:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sandbox:build"
+            "browserTarget": "site:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/sandbox/src/test.ts",
-            "polyfills": "apps/sandbox/src/polyfills.ts",
-            "tsConfig": "apps/sandbox/tsconfig.spec.json",
-            "karmaConfig": "apps/sandbox/karma.conf.js",
+            "main": "apps/site/src/test.ts",
+            "polyfills": "apps/site/src/polyfills.ts",
+            "tsConfig": "apps/site/tsconfig.spec.json",
+            "karmaConfig": "apps/site/karma.conf.js",
             "styles": [
-              "apps/sandbox/src/styles.scss"
+              "apps/site/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "apps/sandbox/src/favicon.ico",
-              "apps/sandbox/src/assets"
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
             ]
           }
         },
@@ -122,8 +122,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/sandbox/tsconfig.app.json",
-              "apps/sandbox/tsconfig.spec.json"
+              "apps/site/tsconfig.app.json",
+              "apps/site/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -133,34 +133,34 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/sandbox/server",
-            "main": "apps/sandbox/src/main.server.ts",
-            "tsConfig": "apps/sandbox/tsconfig.server.json"
+            "outputPath": "dist/site/server",
+            "main": "apps/site/src/main.server.ts",
+            "tsConfig": "apps/site/tsconfig.server.json"
           }
         }
       }
     },
-    "sandbox-e2e": {
-      "root": "e2e/sandbox-e2e/",
+    "site-e2e": {
+      "root": "e2e/site-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/sandbox-e2e/protractor.conf.js",
-            "devServerTarget": "sandbox:serve"
+            "protractorConfig": "e2e/site-e2e/protractor.conf.js",
+            "devServerTarget": "site:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sandbox:serve:production"
+              "devServerTarget": "site:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/sandbox-e2e/tsconfig.e2e.json",
+            "tsConfig": "e2e/site-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -274,5 +274,5 @@
       }
     }
   },
-  "defaultProject": "sandbox"
+  "defaultProject": "site"
 }

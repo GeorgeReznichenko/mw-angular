@@ -18,12 +18,12 @@ enableProdMode();
 const app = express();
 
 const PORT = process.env.PORT || 5200;
-const DIST_FOLDER = join(process.cwd(), 'dist/sandbox/browser');
+const DIST_FOLDER = join(process.cwd(), 'dist/site/browser');
 const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
 const NOT_FOUND_CONTAINER_NAME = 'app-not-found-container';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('../../../dist/sandbox/server/main');
+const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('../../../dist/site/server/main');
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
