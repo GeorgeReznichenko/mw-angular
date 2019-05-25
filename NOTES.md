@@ -24,6 +24,7 @@
 - links in readme for core
 - travis and deploy
 - e2e for CI
+- stylelint plugins
 
 ### IDEAS FOR COMPONENTS
 
