@@ -186,7 +186,7 @@
               "devServerTarget": "site:serve:production"
             },
             "development": {
-              "devServerTarget": "site:serve:production"
+              "devServerTarget": "site:serve:development"
             }
           }
         },
