@@ -28,6 +28,7 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../dist/sit
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine(
   'html',
+  // @ts-ignore
   ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
     providers: [provideModuleMap(LAZY_MODULE_MAP)],
@@ -56,6 +57,7 @@ app.get(
 
 // Serve skipped routes
 if (SKIPPED_ROUTES.length > 0) {
+  // @ts-ignore
   app.get(SKIPPED_ROUTES, (req: express.Request, res: express.Response) => {
     res.sendFile(INDEX_FILE_PATH);
   });

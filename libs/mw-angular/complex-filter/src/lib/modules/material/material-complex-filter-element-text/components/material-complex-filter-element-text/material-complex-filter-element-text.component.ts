@@ -11,5 +11,7 @@ import { COMPLEX_FILTER_COMPONENT_DATA } from '../../../../../entities/complex-f
 export class MaterialComplexFilterElementTextComponent {
   isOpened = false;
 
-  constructor(@Inject(COMPLEX_FILTER_COMPONENT_DATA) private data: ComplexFilterComponentDataModel) {}
+  constructor(@Inject(COMPLEX_FILTER_COMPONENT_DATA) private data: ComplexFilterComponentDataModel) {
+    console.log('COMPLEX_FILTER_COMPONENT_DATA', this.data);
+  }
 }

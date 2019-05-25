@@ -20,10 +20,9 @@
 
 - set lang for html tag
 - storybook
-- configure environments
 - app shell
-- travis and deploy
 - links in readme for core
+- travis and deploy
 - e2e for CI
 
 ### IDEAS FOR COMPONENTS

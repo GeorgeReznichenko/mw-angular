@@ -2,7 +2,7 @@
   <img width="250" height="250" src="https://raw.githubusercontent.com/misticwonder/mw-angular/production/logos/angular-logo.png">
 </p>
 
-<h1 align="center">Most Wanted Angular Libs</h1>
+# Most Wanted Angular Libs
 
 This is the collection of useful libraries for Angular projects.
 

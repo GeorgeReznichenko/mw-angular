@@ -11,32 +11,21 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@mw-angular/core": [
-        "dist/mw-angular/core"
-      ],
-      "@mw-angular/core/*": [
-        "dist/mw-angular/core/*"
-      ],
-      "@mw-angular/complex-filter": [
-        "dist/mw-angular/complex-filter"
-      ],
-      "@mw-angular/complex-filter/*": [
-        "dist/mw-angular/complex-filter/*"
-      ],
-      "@mw-angular/media": [
-        "dist/mw-angular/media"
-      ],
-      "@mw-angular/media/*": [
-        "dist/mw-angular/media/*"
-      ]
+      "@mw-angular/core": ["dist/mw-angular/core"],
+      "@mw-angular/core/*": ["dist/mw-angular/core/*"],
+      "@mw-angular/complex-filter": ["dist/mw-angular/complex-filter"],
+      "@mw-angular/complex-filter/*": ["dist/mw-angular/complex-filter/*"],
+      "@mw-angular/media": ["dist/mw-angular/media"],
+      "@mw-angular/media/*": ["dist/mw-angular/media/*"]
     }
   }
 }
