@@ -19,7 +19,7 @@ export class LoadingService {
   }
 
   startObservable(tag = 'general'): Observable<void> {
-    return Observable.create((subscriber: Subscriber<void>) => {
+    return new Observable((subscriber: Subscriber<void>) => {
       this.start(tag);
 
       subscriber.next();
