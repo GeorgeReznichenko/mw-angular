@@ -33,5 +33,5 @@ script:
 
 after_success:
   - docker build --build-arg project=site --build-arg configuration=$TRAVIS_BRANCH -t $DOCKER_USERNAME/site-$TRAVIS_BRANCH .
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -user="$DOCKER_USERNAME" --password-stdin="$DOCKER_PASSWORD"
   - docker push $DOCKER_USERNAME/site-$TRAVIS_BRANCH
