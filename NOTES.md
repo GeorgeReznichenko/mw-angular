@@ -24,6 +24,7 @@
 - links in readme for core
 - deploy to DigOcean
 - stylelint plugins
+- Angular 8
 
 ### IDEAS FOR COMPONENTS
 
