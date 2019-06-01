@@ -24,12 +24,12 @@ before_script:
   - npm run build-all-libs
 
 script:
-#  - npm run lint-all-scss
-##  - npm run check-all-libs
-##  - npm run lint:site
-##  - npm run test:site
-##  - npm run e2e-ci:site
-##  - ./tools/build-app-ci.sh site $TRAVIS_BRANCH
+  - npm run lint-all-scss
+  - npm run check-all-libs
+  - npm run lint:site
+  - npm run test:site
+  - npm run e2e-ci:site
+  - ./tools/build-app-ci.sh site $TRAVIS_BRANCH
 
 after_success:
   - docker build --build-arg app=site --build-arg env=$TRAVIS_BRANCH -t $DOCKER_USERNAME/site-$TRAVIS_BRANCH .
