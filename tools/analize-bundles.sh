@@ -6,7 +6,7 @@ env="$2"
 if [[ "$app" != "" && "$env" != "" ]] ; then
     rimraf dist/"$app"
     ./tools/build-all-libs.sh
-    ng build "$app" --delete-output-path --configuration "$env" --stats-json
+    npx ng build "$app" --delete-output-path --configuration "$env" --stats-json
     webpack-bundle-analyzer dist/"$app"/browser/stats-es2015.json
 else
     echo "param errors"

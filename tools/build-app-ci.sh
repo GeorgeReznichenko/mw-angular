@@ -4,8 +4,8 @@ app="$1"
 env="$2"
 
 if [[ "$app" != "" && "$env" != "" ]] ; then
-    ng build "$app" --delete-output-path --configuration "$env"
-    ng run "$app":server --delete-output-path
+    npx ng build "$app" --delete-output-path --configuration "$env"
+    npx ng run "$app":server --delete-output-path
     webpack --config ./apps/"$app"/webpack.server.config.js --progress --colors
     node dist/"$app"/prerender.js
 else

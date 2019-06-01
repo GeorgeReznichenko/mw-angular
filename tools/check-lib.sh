@@ -3,9 +3,9 @@
 lib="$1"
 
 if [[ "$lib" != "" ]] ; then
-    ng lint @"$lib" || exit
+    npx ng lint @"$lib" || exit
     echo "Testing \"@$lib\"..."
-    ng test @"$lib" --watch=false --browsers=ChromeHeadless || exit
+    npx ng test @"$lib" --watch=false --browsers=ChromeHeadless || exit
 else
     echo "param errors"
     exit 1
