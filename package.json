@@ -18,6 +18,7 @@
     "test:site": "ng test site --watch=false --browsers=ChromeHeadless",
     "test-watch:site": "ng test site",
     "e2e:site": "ng run site-e2e:e2e --port 6200",
+    "e2e-ci:site": "ng run site-e2e:e2e --port 6200 --protractor-config=./e2e/site-e2e/protractor-ci.conf.js",
     "analize:site": "./tools/analize-bundles.sh site development",
     "------------------ core lib ------------------": "",
     "check:core": "./tools/check-lib.sh mw-angular/core",

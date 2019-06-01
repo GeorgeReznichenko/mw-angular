@@ -22,8 +22,7 @@
 - storybook
 - app shell
 - links in readme for core
-- travis and deploy
-- e2e for CI
+- deploy to DigOcean
 - stylelint plugins
 
 ### IDEAS FOR COMPONENTS

@@ -1,0 +1,37 @@
+sudo: required
+services:
+  - docker
+
+language: node_js
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - 'node_modules'
+
+branches:
+  only:
+    - production
+    - development
+
+before_script:
+  - npm run build-all-libs
+
+script:
+  - npm run lint-all-scss
+  - npm run check-all-libs
+  - npm run lint:site
+  - npm run test:site
+  - npm run e2e-ci:site
+  - ./tools/build-app-ci.sh site $TRAVIS_BRANCH
+
+after_success:
+  - docker build --build-arg project=site --build-arg configuration=$TRAVIS_BRANCH -t $DOCKER_USERNAME/site-$TRAVIS_BRANCH .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push $DOCKER_USERNAME/site-$TRAVIS_BRANCH
