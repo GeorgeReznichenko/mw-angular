@@ -9,6 +9,6 @@ if [[ "$app" != "" && "$env" != "" ]] ; then
     webpack --config ./apps/"$app"/webpack.server.config.js --progress --colors
     node dist/"$app"/prerender.js
 else
-    echo "param errors"
+    echo "ci param errors $app $env"
     exit 1
 fi
