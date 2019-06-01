@@ -8,6 +8,6 @@ if [[ "$app" != "" && "$env" != "" ]] ; then
     ./tools/build-all-libs.sh
     ./tools/build-app-ci.sh "$app" "$env"
 else
-    echo "build app param errors - $app $env"
+    echo "build app param errors"
     exit 1
 fi

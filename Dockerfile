@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . ./
-RUN ./tools/build-app.sh $app $env
+RUN ./tools/build-app.sh "$app" "$env"
 
 EXPOSE 5200
 CMD export PORT=5200 && node dist/$APP/server.js
