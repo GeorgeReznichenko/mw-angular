@@ -6,6 +6,6 @@ if [[ "$lib" != "" ]] ; then
     rimraf dist/"$lib"
     ng build @"$lib"
 else
-    echo "param errors"
+    echo "build lib param errors - $lib"
     exit 1
 fi
