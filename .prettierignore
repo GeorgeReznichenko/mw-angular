@@ -1,3 +1,6 @@
 main.ts
 polyfills.ts
 test.ts
+angular.json
+tsconfig.json
+tslint.json

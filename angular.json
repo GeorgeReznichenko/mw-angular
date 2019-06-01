@@ -4,15 +4,15 @@
   "newProjectRoot": "libs",
   "projects": {
     "site": {
-      "root": "apps/site/",
-      "sourceRoot": "apps/site/src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
+      "root": "apps/site",
+      "sourceRoot": "apps/site/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -22,9 +22,16 @@
             "main": "apps/site/src/main.ts",
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.app.json",
-            "assets": ["apps/site/src/robots.txt", "apps/site/src/favicon.ico", "apps/site/src/assets"],
+            "assets": [
+              "apps/site/src/robots.txt",
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["apps/site/src/scss/partials", "apps/site/src/scss/vendors"]
+              "includePaths": [
+                "apps/site/src/scss/partials",
+                "apps/site/src/scss/vendors"
+              ]
             },
             "styles": [
               {
@@ -44,8 +51,7 @@
               },
               "apps/site/src/scss/styles.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "serve": {
@@ -128,9 +134,16 @@
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.spec.json",
             "karmaConfig": "apps/site/karma.conf.js",
-            "assets": ["apps/site/src/robots.txt", "apps/site/src/favicon.ico", "apps/site/src/assets"],
+            "assets": [
+              "apps/site/src/robots.txt",
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["apps/site/src/scss/partials", "apps/site/src/scss/vendors"]
+              "includePaths": [
+                "apps/site/src/scss/partials",
+                "apps/site/src/scss/vendors"
+              ]
             },
             "styles": [
               {
@@ -153,13 +166,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/site/tsconfig.app.json", "apps/site/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
@@ -167,42 +173,38 @@
             "main": "apps/site/src/main.server.ts",
             "tsConfig": "apps/site/tsconfig.server.json"
           }
-        }
-      }
-    },
-    "site-e2e": {
-      "root": "e2e/site-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/site/tsconfig.app.json",
+              "apps/site/tsconfig.spec.json",
+              "apps/site/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/site-e2e/protractor.conf.js",
+            "protractorConfig": "apps/site/e2e/protractor.conf.js",
             "devServerTarget": "site:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "site:serve:production"
-            },
-            "development": {
-              "devServerTarget": "site:serve:development"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/site-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
     "@mw-angular/core": {
+      "projectType": "library",
       "root": "libs/mw-angular/core",
       "sourceRoot": "libs/mw-angular/core/src",
-      "projectType": "library",
       "prefix": "mw",
       "architect": {
         "build": {
@@ -223,16 +225,21 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/mw-angular/core/tsconfig.lib.json", "libs/mw-angular/core/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "libs/mw-angular/core/tsconfig.lib.json",
+              "libs/mw-angular/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     },
     "@mw-angular/complex-filter": {
+      "projectType": "library",
       "root": "libs/mw-angular/complex-filter",
       "sourceRoot": "libs/mw-angular/complex-filter/src",
-      "projectType": "library",
       "prefix": "mw",
       "architect": {
         "build": {
@@ -257,15 +264,17 @@
               "libs/mw-angular/complex-filter/tsconfig.lib.json",
               "libs/mw-angular/complex-filter/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     },
     "@mw-angular/media": {
+      "projectType": "library",
       "root": "libs/mw-angular/media",
       "sourceRoot": "libs/mw-angular/media/src",
-      "projectType": "library",
       "prefix": "mw",
       "architect": {
         "build": {
@@ -286,8 +295,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/mw-angular/media/tsconfig.lib.json", "libs/mw-angular/media/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "libs/mw-angular/media/tsconfig.lib.json",
+              "libs/mw-angular/media/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
