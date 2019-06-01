@@ -32,6 +32,6 @@ script:
   - ./tools/build-app-ci.sh site $TRAVIS_BRANCH
 
 after_success:
-  - docker build --build-arg project=site --build-arg configuration=$TRAVIS_BRANCH -t $DOCKER_USERNAME/site-$TRAVIS_BRANCH .
+  - docker build --build-arg app=site --build-arg env=$TRAVIS_BRANCH -t $DOCKER_USERNAME/site-$TRAVIS_BRANCH .
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push $DOCKER_USERNAME/site-$TRAVIS_BRANCH
