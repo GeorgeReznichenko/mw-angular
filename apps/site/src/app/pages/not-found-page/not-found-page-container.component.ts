@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MetaService } from '@mw-angular/core';
+import { MwMetaService } from '@mw-angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,9 +8,9 @@ import { MetaService } from '@mw-angular/core';
   `,
 })
 export class NotFoundPageContainerComponent implements OnInit {
-  constructor(private metaService: MetaService) {}
+  constructor(private mwMetaService: MwMetaService) {}
 
   ngOnInit(): void {
-    this.metaService.setTitle('Page not found');
+    this.mwMetaService.setTitle('Page not found');
   }
 }

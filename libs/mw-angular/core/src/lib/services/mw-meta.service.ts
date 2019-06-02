@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { EnvironmentService } from './environment.service';
+import { MwEnvironmentService } from './mw-environment.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MetaService {
+export class MwMetaService {
   private pageTitleSubject = new BehaviorSubject<string>('');
 
-  constructor(private environmentService: EnvironmentService, private title: Title) {}
+  constructor(private mwEnvironmentService: MwEnvironmentService, private title: Title) {}
 
   setTitle(title: string): any {
-    const prefix = this.environmentService.getValue('titlePrefix', '');
-    const postfix = this.environmentService.getValue('titlePostfix', '');
+    const prefix = this.mwEnvironmentService.getValue('titlePrefix', '');
+    const postfix = this.mwEnvironmentService.getValue('titlePostfix', '');
 
     this.title.setTitle(`${prefix}${title}${postfix}`);
     this.pageTitleSubject.next(title);

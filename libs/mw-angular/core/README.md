@@ -16,21 +16,21 @@ $ npm install @mw-angular/core
 
 #### Available features
 
-| Feature             | Docs      |
-| ------------------- | --------- |
-| EnvironmentService  | [Docs][1] |
-| LoadingService      | [Docs][2] |
-| LocalStorageService | [Docs][3] |
-| MetaService         | [Docs][4] |
-| PlatformService     | [Docs][5] |
-| RequestService      | [Docs][6] |
+| Feature               | Docs      |
+| --------------------- | --------- |
+| MwEnvironmentService  | [Docs][1] |
+| MwLoadingService      | [Docs][2] |
+| MwLocalStorageService | [Docs][3] |
+| MwMetaService         | [Docs][4] |
+| MwPlatformService     | [Docs][5] |
+| MwRequestService      | [Docs][6] |
 
-[1]: https://mw-angular.com
-[2]: https://mw-angular.com
-[3]: https://mw-angular.com
-[4]: https://mw-angular.com
-[5]: https://mw-angular.com
-[6]: https://mw-angular.com
+[1]: https://mw-angular.com/docs
+[2]: https://mw-angular.com/docs
+[3]: https://mw-angular.com/docs
+[4]: https://mw-angular.com/docs
+[5]: https://mw-angular.com/docs
+[6]: https://mw-angular.com/docs
 
 ## Contributing
 

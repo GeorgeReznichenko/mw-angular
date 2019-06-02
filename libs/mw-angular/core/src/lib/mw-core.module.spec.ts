@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { CoreModule } from './core.module';
+import { MwCoreModule } from './mw-core.module';
 
-describe('CoreModule', () => {
+describe('MwCoreModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule],
+      imports: [MwCoreModule],
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(CoreModule).toBeDefined();
+    expect(MwCoreModule).toBeDefined();
   });
 });

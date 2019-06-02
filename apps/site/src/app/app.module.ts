@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from '@mw-angular/core';
+import { MwCoreModule } from '@mw-angular/core';
 import { environment } from '../environments/environment';
 import { AppContainerComponent } from './app-container.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule.forRoot(environment),
+    MwCoreModule.forRoot(environment),
   ],
   declarations: [AppContainerComponent],
   bootstrap: [AppContainerComponent],

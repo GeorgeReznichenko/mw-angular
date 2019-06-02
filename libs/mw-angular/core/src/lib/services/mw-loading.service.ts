@@ -5,7 +5,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class LoadingService {
+export class MwLoadingService {
   private isLoadingSubjectsPool: { [tag: string]: BehaviorSubject<number> } = {};
 
   getIsLoading(tag = 'general'): Observable<boolean> {

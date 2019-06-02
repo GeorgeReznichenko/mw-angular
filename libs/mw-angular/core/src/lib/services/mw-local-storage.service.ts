@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { PlatformService } from './platform.service';
+import { MwPlatformService } from './mw-platform.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LocalStorageService {
-  constructor(protected platformService: PlatformService) {}
+export class MwLocalStorageService {
+  constructor(protected mwPlatformService: MwPlatformService) {}
 
   protected static serialize(data: any): string {
     return JSON.stringify(data);
@@ -16,17 +16,17 @@ export class LocalStorageService {
   }
 
   setItem(key: string, value: any): void {
-    if (this.platformService.isBrowser()) {
-      const serializedData = LocalStorageService.serialize(value);
+    if (this.mwPlatformService.isBrowser()) {
+      const serializedData = MwLocalStorageService.serialize(value);
       localStorage.setItem(key, serializedData);
     }
   }
 
   getItem<T>(key: string): T | null {
-    if (this.platformService.isBrowser()) {
+    if (this.mwPlatformService.isBrowser()) {
       const value = localStorage.getItem(key);
       if (value !== null) {
-        return LocalStorageService.unserialize<T>(value);
+        return MwLocalStorageService.unserialize<T>(value);
       }
     }
 
@@ -34,13 +34,13 @@ export class LocalStorageService {
   }
 
   deleteItem(key: string): void {
-    if (this.platformService.isBrowser()) {
+    if (this.mwPlatformService.isBrowser()) {
       localStorage.removeItem(key);
     }
   }
 
   clear(): void {
-    if (this.platformService.isBrowser()) {
+    if (this.mwPlatformService.isBrowser()) {
       localStorage.clear();
     }
   }

@@ -1,12 +1,12 @@
 import { fakeAsync, tick } from '@angular/core/testing';
-import { LoadingService } from './loading.service';
+import { MwLoadingService } from './mw-loading.service';
 
-describe('LoadingService', () => {
-  let service: LoadingService;
+describe('MwLoadingService', () => {
+  let service: MwLoadingService;
   const debounceTime = 100;
 
   beforeEach(() => {
-    service = new LoadingService();
+    service = new MwLoadingService();
   });
 
   describe('getIsLoading', () => {

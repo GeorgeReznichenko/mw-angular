@@ -1,16 +1,15 @@
-import { Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { Request } from 'express';
-
-import { PlatformService } from './platform.service';
+import { MwPlatformService } from './mw-platform.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class RequestService {
+export class MwRequestService {
   constructor(
-    private platformQueryService: PlatformService,
+    private mwPlatformService: MwPlatformService,
     @Inject(DOCUMENT) private document: any,
     @Optional()
     @Inject(REQUEST)
@@ -18,7 +17,7 @@ export class RequestService {
   ) {}
 
   hasRequest(): boolean {
-    return (this.platformQueryService.isServer() && this.request !== null) || this.platformQueryService.isBrowser();
+    return (this.mwPlatformService.isServer() && this.request !== null) || this.mwPlatformService.isBrowser();
   }
 
   /**
@@ -27,13 +26,13 @@ export class RequestService {
   getHost(): string {
     let host: string | undefined;
 
-    if (this.platformQueryService.isServer()) {
+    if (this.mwPlatformService.isServer()) {
       if (this.request === null) {
         throw new Error('Request object in not set.');
       }
 
       host = this.request.get('host');
-    } else if (this.platformQueryService.isBrowser()) {
+    } else if (this.mwPlatformService.isBrowser()) {
       host = this.document.location.host;
     } else {
       throw new Error('Unknown platform.');
@@ -52,7 +51,7 @@ export class RequestService {
   getLocationOrigin(): string {
     let locationOrigin: string;
 
-    if (this.platformQueryService.isServer()) {
+    if (this.mwPlatformService.isServer()) {
       if (this.request === null) {
         throw new Error('Request object in not set.');
       }
@@ -65,7 +64,7 @@ export class RequestService {
 
       const protocol = host.lastIndexOf('localhost') === 0 ? 'http' : 'https';
       locationOrigin = `${protocol}://${host}`;
-    } else if (this.platformQueryService.isBrowser()) {
+    } else if (this.mwPlatformService.isBrowser()) {
       locationOrigin = this.document.location.origin;
     } else {
       throw new Error('Unknown platform.');
@@ -80,13 +79,13 @@ export class RequestService {
   getLocationPathname(): string {
     let locationPathname: string;
 
-    if (this.platformQueryService.isServer()) {
+    if (this.mwPlatformService.isServer()) {
       if (this.request === null) {
         throw new Error('Request object in not set.');
       }
 
       locationPathname = this.request.path;
-    } else if (this.platformQueryService.isBrowser()) {
+    } else if (this.mwPlatformService.isBrowser()) {
       locationPathname = this.document.location.pathname;
     } else {
       throw new Error('Unknown platform.');
