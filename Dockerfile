@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:12.3.1
 
 ARG app
 ARG env
