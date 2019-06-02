@@ -18,7 +18,7 @@ if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
     ./tools/build-lib.sh "$lib"
 
     echo -n "Enter password from your authenticator: "
-    read otp
+    read -p otp
 
     npm publish dist/"$lib" --access public --otp "$otp"
 else
