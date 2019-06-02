@@ -12,8 +12,8 @@ if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
     npm version "$type"
 
     cd "$basePath"
-    git commit -am "Publish new version of $lib"
-    git push && git push --tags
+    git commit --no-verify -am "Publish new version of $lib"
+    git push --no-verify && git push --no-verify --tags
 
     ./tools/build-lib.sh "$lib"
 
