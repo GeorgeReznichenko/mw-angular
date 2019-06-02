@@ -17,10 +17,9 @@ if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
 
     ./tools/build-lib.sh "$lib"
 
-    echo -n "Enter password from your authenticator1: "
-    read -p "Enter password from your authenticator2: " otp
+    read -p "Enter password from your authenticator: " otp
 
-    npm publish dist/"$lib" --access public --otp "$otp"
+    npm publish dist/"$lib" --access public --otp "$otp" < /dev/null
 else
     echo "param errors or git branch is not production"
     exit 1
