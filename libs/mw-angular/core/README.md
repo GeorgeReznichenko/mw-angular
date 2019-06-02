@@ -46,6 +46,7 @@ export class AppModule {}
 | MwMetaService         | [Docs][4] |
 | MwPlatformService     | [Docs][5] |
 | MwRequestService      | [Docs][6] |
+| MwErrorLockService    | [Docs][7] |
 
 [1]: https://mw-angular.com/docs
 [2]: https://mw-angular.com/docs
@@ -53,6 +54,7 @@ export class AppModule {}
 [4]: https://mw-angular.com/docs
 [5]: https://mw-angular.com/docs
 [6]: https://mw-angular.com/docs
+[7]: https://mw-angular.com/docs
 
 ## Contributing
 
