@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+
+  titlePrefix: 'MW Angular - ',
+  titlePostfix: '- Development',
 };
 
 /*

@@ -1,5 +1,5 @@
 /**
- * Values must have suffix "-theme"
+ * Values must have postfix "-theme"
  */
 export const enum Theme {
   LightTheme = 'light-theme',
