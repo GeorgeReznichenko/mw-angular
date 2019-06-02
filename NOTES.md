@@ -18,13 +18,14 @@
 
 ## TODO
 
+- rename MwModules
 - set lang for html tag
 - storybook
 - app shell
 - links in readme for core
-- deploy to DigOcean
 - stylelint plugins
-- Angular 8
+- check lazy routes fix
+- localization
 
 ### IDEAS FOR COMPONENTS
 
