@@ -16,7 +16,7 @@ Use the package manager to install library.
 $ npm install @mw-angular/core
 ```
 
-Import MwCoreModule in your root module providing environment file.
+Import **MwCoreModule** in your root module providing environment file.
 
 ```javascript
 import { environment } from '../environments/environment';
@@ -67,6 +67,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-> You can check out the full license [here](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE)
+> You can check out the full license [here](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE).
 
 This project is licensed under the terms of the **MIT** license.
