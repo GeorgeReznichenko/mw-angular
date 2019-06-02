@@ -7,6 +7,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: ['./server-error.component.scss'],
 })
 export class ServerErrorComponent {
-  @Input() code: string;
+  @Input() code: string | number;
   @Input() description: string;
 }

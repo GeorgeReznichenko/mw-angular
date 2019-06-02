@@ -1,4 +1,4 @@
 export interface MwErrorLock {
-  code: string;
+  code: string | number;
   description: string;
 }
