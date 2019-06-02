@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { MwErrorLock } from '../entities/mw-error-lock';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MwErrorLockService {
-  private isErrorLockedSubject = new BehaviorSubject<boolean>(false);
+  private errorLockSubject = new BehaviorSubject<MwErrorLock | null>(null);
 
-  getIsErrorLocked(): Observable<boolean> {
-    return this.isErrorLockedSubject.asObservable();
+  getErrorLock(): Observable<MwErrorLock | null> {
+    return this.errorLockSubject.asObservable();
   }
 
-  setIsErrorLocked(isLocked: boolean): void {
-    this.isErrorLockedSubject.next(isLocked);
+  setErrorLock(errorLock: MwErrorLock | null): void {
+    this.errorLockSubject.next(errorLock);
   }
 }
