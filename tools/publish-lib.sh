@@ -9,10 +9,10 @@ if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
     ./tools/check-lib.sh "$lib"
 
     cd libs/"$lib"
-    npm version "$type"
+    ver="$(npm version "$type")"
 
     cd "$basePath"
-    git commit --no-verify -am "Publish new version of $lib"
+    git commit --no-verify -am "Publish new version of $lib - $ver"
     git push --no-verify && git push --no-verify --tags
 
     ./tools/build-lib.sh "$lib"
@@ -20,7 +20,7 @@ if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
     echo -n "Enter password from your authenticator: "
     read otp
 
-    # npm publish dist/"$lib" --access public --otp "$otp"
+    npm publish dist/"$lib" --access public --otp "$otp"
 else
     echo "param errors or git branch is not production"
     exit 1
