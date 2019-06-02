@@ -20,7 +20,7 @@ const app = express();
 const PORT = process.env.PORT || 5200;
 const DIST_FOLDER = join(process.cwd(), 'dist/site/browser');
 const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
-const NOT_FOUND_CONTAINER_NAME = 'app-not-found-container';
+const NOT_FOUND_COMPONENT_NAME = 'app-not-found-error';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../dist/site/server/main');
@@ -78,7 +78,7 @@ if (PRERENDERED_ROUTES.length > 0) {
       const html = readFileSync(filePath, 'utf8');
 
       // send 404 status code if this is 404 page
-      if (html.indexOf(NOT_FOUND_CONTAINER_NAME) !== -1) {
+      if (html.indexOf(NOT_FOUND_COMPONENT_NAME) !== -1) {
         res.status(404);
       }
 
@@ -96,7 +96,7 @@ app.get('*', (req: express.Request, res: express.Response) => {
       throw new Error(`Server render fails.`);
     } else {
       // send 404 status code if this is 404 page
-      if (html.indexOf(NOT_FOUND_CONTAINER_NAME) !== -1) {
+      if (html.indexOf(NOT_FOUND_COMPONENT_NAME) !== -1) {
         res.status(404);
       }
 
