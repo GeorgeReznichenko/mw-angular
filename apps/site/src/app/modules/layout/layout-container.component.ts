@@ -6,7 +6,7 @@ import { ThemesService } from '../material/services/themes.service';
 import { Theme } from '../material/types/theme';
 
 @Component({
-  selector: 'app-base-layout-container',
+  selector: 'app-layout-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-template [ngIf]="(errorLock$ | async) !== null" [ngIfElse]="layout">

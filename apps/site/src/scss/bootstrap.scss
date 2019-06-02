@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 
+button {
+  &:focus {
+    outline: 0;
+  }
+}
+
 $grid-breakpoints: (
   xs: 0,
   sm: 600px,

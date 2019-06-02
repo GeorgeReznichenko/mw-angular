@@ -3,9 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'docs',
+  },
+  {
+    path: 'docs',
+    loadChildren: './pages/docs-page/docs-page.module#DocsPageModule',
+  },
+  {
     path: '**',
-    // loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule),
     loadChildren: './pages/not-found-page/not-found-page.module#NotFoundPageModule',
+    // loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule),
   },
 ];
 
