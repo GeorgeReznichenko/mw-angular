@@ -3,8 +3,8 @@
 [![npm version](https://badge.fury.io/js/%40mw-angular%2Fcore.svg)](https://badge.fury.io/js/%40mw-angular%2Fcore)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-This is the core library from Most Wanted Angular Libs
-([site](https://mw-angular.com), [repository](https://github.com/misticwonder/mw-angular#readme)).
+This is the core library from **Most Wanted Angular Libs**
+(**[site](https://mw-angular.com)**, **[repository](https://github.com/misticwonder/mw-angular#readme)**).
 
 Includes widely used services for Angular projects.
 
@@ -16,7 +16,7 @@ Use the package manager to install library.
 $ npm install @mw-angular/core
 ```
 
-Import MwCoreModule in your root module providing environment file
+Import MwCoreModule in your root module providing environment file.
 
 ```javascript
 import { environment } from '../environments/environment';
