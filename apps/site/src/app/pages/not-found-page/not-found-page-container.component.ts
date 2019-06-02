@@ -4,7 +4,7 @@ import { MwMetaService } from '@mw-angular/core';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <app-not-found-container></app-not-found-container>
+    <app-not-found-error></app-not-found-error>
   `,
 })
 export class NotFoundPageContainerComponent implements OnInit {
