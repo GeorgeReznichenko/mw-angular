@@ -6,6 +6,10 @@
 
 This is the collection of useful libraries for Angular projects.
 
+#### Quick links
+
+[Documentation, demos, and guides](https://mw-angular.com) |
+
 ---
 
 ## Available libraries
