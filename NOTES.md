@@ -26,6 +26,7 @@
 - stylelint plugins
 - check lazy routes fix
 - localization
+- write article about changing themes
 
 ### IDEAS FOR COMPONENTS
 
