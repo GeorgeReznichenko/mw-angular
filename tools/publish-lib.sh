@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 lib="$1"
+type="$2"
 basePath="$(pwd)"
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
-if [[ "$lib" != "" && "$branch" == "production" ]] ; then
+if [[ "$lib" != "" && "$type" != "" && "$branch" == "production" ]] ; then
     ./tools/check-lib.sh "$lib"
 
     cd libs/"$lib"
-    npm version patch
+    npm version "$type"
 
     cd "$basePath"
     git commit -am "Publish new version of $lib"
