@@ -9,12 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'docs',
-    loadChildren: './pages/docs-page/docs-page.module#DocsPageModule',
+    loadChildren: () => import('./pages/docs-page/docs-page.module').then((m) => m.DocsPageModule),
   },
   {
     path: '**',
-    loadChildren: './pages/not-found-page/not-found-page.module#NotFoundPageModule',
-    // loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule),
+    loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule),
   },
 ];
 
