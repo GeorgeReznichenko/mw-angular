@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 
-button {
+button,
+a {
   &:focus {
     outline: 0;
   }

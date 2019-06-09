@@ -14,5 +14,5 @@ $typography-config: mat-typography-config(
   $body-1: mat-typography-level(14px, 20px, 400),
   $caption: mat-typography-level(12px, 20px, 400),
   $button: mat-typography-level(14px, 14px, 500),
-  $input: mat-typography-level(inherit, 1.125, 400) / / Line-height must be unit-less fraction of the font-size.,
+  $input: mat-typography-level(inherit, 1.125, 400)
 );

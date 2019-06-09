@@ -4,3 +4,4 @@ test.ts
 angular.json
 tsconfig.json
 tslint.json
+apps/site/src/scss/partials/_typography-config.scss
