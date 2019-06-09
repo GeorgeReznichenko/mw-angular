@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MwErrorLockService, MwMetaService, MwErrorLock } from '@mw-angular/core';
+import { MwErrorLock, MwErrorLockService } from '@mw-angular/core';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { ThemesService } from '../material/services/themes.service';
@@ -25,15 +25,9 @@ import { Theme } from '../material/types/theme';
 })
 export class LayoutContainerComponent {
   errorLock$: Observable<MwErrorLock | null>;
-  pageTitle$: Observable<string>;
 
-  constructor(
-    private mwErrorLockService: MwErrorLockService,
-    private mwMetaService: MwMetaService,
-    private themesService: ThemesService,
-  ) {
+  constructor(private mwErrorLockService: MwErrorLockService, private themesService: ThemesService) {
     this.errorLock$ = this.mwErrorLockService.getErrorLock();
-    this.pageTitle$ = this.mwMetaService.getPageTitle();
   }
 
   onChangeThemeEvent(): void {
