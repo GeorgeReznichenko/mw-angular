@@ -1,7 +1,28 @@
-.sidenav-container {
-  height: 100vh;
+$toolbar-big: 64px;
+$toolbar-small: 56px;
+
+.toolbar {
+  position: fixed;
+  z-index: 2;
 }
 
-.sidenav {
-  width: 200px;
+.sidenav-container {
+  min-height: 100vh;
+
+  .sidenav {
+    width: 350px;
+    padding-top: $toolbar-big;
+
+    @media (max-width: 599px) {
+      padding-top: $toolbar-small;
+    }
+  }
+
+  .sidenav-content {
+    padding-top: $toolbar-big;
+
+    @media (max-width: 599px) {
+      padding-top: $toolbar-small;
+    }
+  }
 }
