@@ -2,5 +2,5 @@ export const environment = {
   production: true,
 
   titlePrefix: '',
-  titlePostfix: ' - MW Angular - Development',
+  titlePostfix: ' - Most Wanted Angular - Development',
 };
