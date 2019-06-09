@@ -1,4 +1,4 @@
-<div *ngIf="code === 404 || code === '404'" style="display: none">
+<div *ngIf="code === 404 || code === '404'" class="d-none">
   SET_STATUS_404, DON'T REMOVE THIS BLOCK
 </div>
 
@@ -7,6 +7,6 @@
     <div class="col mat-h1 text-center">{{ code }}</div>
   </div>
   <div class="row">
-    <div class="col mat-h3 text-center">{{ description }}</div>
+    <div class="col mat-h3 text-center text-uppercase">{{ description }}</div>
   </div>
 </div>
