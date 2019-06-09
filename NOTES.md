@@ -33,3 +33,4 @@
 - https://material.io/design/sound/
 - reusable pipe from https://codeburst.io/angular-bad-practices-eab0e594ce92
 - eventBus
+- File api https://stackoverflow.com/questions/5872815/reading-local-files-with-input-type-file
