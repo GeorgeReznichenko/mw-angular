@@ -1,7 +1,8 @@
 @import '~@angular/material/theming';
 @import 'custom-components-theme';
+@import 'typography-config';
 
-@include mat-core;
+@include mat-core($typography-config);
 
 $primary: mat-palette($mat-indigo);
 $accent: mat-palette($mat-pink, A400, A100, A700);
