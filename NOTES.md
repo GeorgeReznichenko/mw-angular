@@ -18,6 +18,9 @@
 
 ## TODO
 
+- top menu in 2 lines when small screen
+- transclude sidebar content
+- create documents component
 - rename MwModules
 - set lang for html tag
 - storybook
