@@ -6,6 +6,6 @@ export class NotFoundPagePo {
   }
 
   getCodeText() {
-    return element(by.css('.server-error__code')).getText() as Promise<string>;
+    return element(by.css('.e2e-error-code')).getText() as Promise<string>;
   }
 }
