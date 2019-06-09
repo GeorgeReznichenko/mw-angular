@@ -1,14 +1,16 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 
 * {
-  &:focus {
-    outline: 0;
+  &:focus,
+  &:active {
+    outline: 0 !important;
   }
 }
 
 a,
 a:hover {
   text-decoration: none;
+  color: inherit;
 }
 
 $grid-breakpoints: (
