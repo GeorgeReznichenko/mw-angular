@@ -4,6 +4,17 @@ $toolbar-small: 56px;
 .toolbar {
   position: fixed;
   z-index: 2;
+
+  a {
+    img {
+      height: 26px;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 
 .sidenav-container {
