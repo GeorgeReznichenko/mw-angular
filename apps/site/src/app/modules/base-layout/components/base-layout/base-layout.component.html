@@ -4,12 +4,14 @@
     mat-icon-button
     aria-label="Toggle sidenav"
     matTooltip="Toggle sidenav"
-    (click)="drawer.toggle()"
+    (click)="sidenavStart.toggle()"
     *ngIf="(isBigScreen$ | async) === false"
   >
     <mat-icon aria-label="Toggle sidenav icon">menu</mat-icon>
   </button>
-  <span>site</span>
+
+  <span class="flex-grow-1"></span>
+
   <button
     type="button"
     mat-icon-button
@@ -22,8 +24,9 @@
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
-    #drawer
-    class="sidenav"
+    position="start"
+    #sidenavStart
+    class="sidenav-start"
     [attr.role]="(isBigScreen$ | async) ? 'navigation' : 'dialog'"
     [mode]="(isBigScreen$ | async) ? 'side' : 'over'"
     [opened]="(isBigScreen$ | async) === true"
