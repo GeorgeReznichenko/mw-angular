@@ -6,7 +6,7 @@ import { ThemesService } from '../material/services/themes.service';
 import { Theme } from '../material/types/theme';
 
 @Component({
-  selector: 'app-layout-container',
+  selector: 'app-base-layout-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ng-template [ngIf]="(errorLock$ | async) !== null" [ngIfElse]="layout">
@@ -17,13 +17,13 @@ import { Theme } from '../material/types/theme';
     </ng-template>
 
     <ng-template #layout>
-      <app-layout (changeThemeEvent)="onChangeThemeEvent()">
+      <app-base-layout (changeThemeEvent)="onChangeThemeEvent()">
         <ng-content></ng-content>
-      </app-layout>
+      </app-base-layout>
     </ng-template>
   `,
 })
-export class LayoutContainerComponent {
+export class BaseLayoutContainerComponent {
   errorLock$: Observable<MwErrorLock | null>;
 
   constructor(private mwErrorLockService: MwErrorLockService, private themesService: ThemesService) {
