@@ -4,9 +4,9 @@ import { MwMetaService } from '@mw-angular/core';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <app-base-layout-container>
+    <app-docs-layout-container>
       <app-docs-page></app-docs-page>
-    </app-base-layout-container>
+    </app-docs-layout-container>
   `,
 })
 export class DocsPageContainerComponent implements OnInit {
