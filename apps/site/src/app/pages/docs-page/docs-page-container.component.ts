@@ -5,7 +5,7 @@ import { MwMetaService } from '@mw-angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-base-layout-container>
-      <h1>Documentation</h1>
+      <app-docs-page></app-docs-page>
     </app-base-layout-container>
   `,
 })
