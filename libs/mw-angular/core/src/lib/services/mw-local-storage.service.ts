@@ -7,11 +7,11 @@ import { MwPlatformService } from './mw-platform.service';
 export class MwLocalStorageService {
   constructor(protected mwPlatformService: MwPlatformService) {}
 
-  protected static serialize(data: any): string {
+  static serialize(data: any): string {
     return JSON.stringify(data);
   }
 
-  protected static unserialize<T>(data: string): T {
+  static unserialize<T>(data: string): T {
     return JSON.parse(data);
   }
 
