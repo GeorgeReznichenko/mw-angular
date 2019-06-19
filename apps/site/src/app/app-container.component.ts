@@ -4,7 +4,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <router-outlet></router-outlet>
+    <app-base-layout-container>
+      <router-outlet></router-outlet>
+    </app-base-layout-container>
   `,
 })
 export class AppContainerComponent {}
