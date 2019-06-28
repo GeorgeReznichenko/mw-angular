@@ -17,9 +17,16 @@ const routes: Routes = [
   },
 ];
 
+const langRoutes: Routes = [
+  {
+    path: ':langId',
+    children: routes,
+  },
+];
+
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
+    RouterModule.forRoot(langRoutes, {
       initialNavigation: 'enabled',
       scrollPositionRestoration: 'top',
     }),
