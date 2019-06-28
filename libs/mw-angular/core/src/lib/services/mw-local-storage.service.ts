@@ -7,17 +7,17 @@ import { MwPlatformService } from './mw-platform.service';
 export class MwLocalStorageService {
   constructor(protected mwPlatformService: MwPlatformService) {}
 
-  static serialize(data: any): string {
+  private serialize(data: any): string {
     return JSON.stringify(data);
   }
 
-  static unserialize<T>(data: string): T {
+  private unserialize<T>(data: string): T {
     return JSON.parse(data);
   }
 
   setItem(key: string, value: any): void {
     if (this.mwPlatformService.isBrowser()) {
-      const serializedData = MwLocalStorageService.serialize(value);
+      const serializedData = this.serialize(value);
       localStorage.setItem(key, serializedData);
     }
   }
@@ -26,7 +26,7 @@ export class MwLocalStorageService {
     if (this.mwPlatformService.isBrowser()) {
       const value = localStorage.getItem(key);
       if (value !== null) {
-        return MwLocalStorageService.unserialize<T>(value);
+        return this.unserialize<T>(value);
       }
     }
 
