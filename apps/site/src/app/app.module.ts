@@ -7,14 +7,14 @@ import { environment } from '../environments/environment';
 import { AppContainerComponent } from './app-container.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BaseLayoutModule } from './modules/base-layout/base-layout.module';
-import { TranslationModule } from './modules/translation/translation.module';
+import { TranslationsModule } from './modules/languages/translations.module';
 
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     HttpClientModule,
-    TranslationModule,
+    TranslationsModule,
     MwCoreModule.forRoot(environment),
     AppRoutingModule,
     BaseLayoutModule,

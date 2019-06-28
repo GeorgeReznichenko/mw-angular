@@ -24,5 +24,6 @@ const routes: Routes = [
       scrollPositionRestoration: 'top',
     }),
   ],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
