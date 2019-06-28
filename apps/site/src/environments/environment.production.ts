@@ -3,4 +3,6 @@ export const environment = {
 
   titlePrefix: '',
   titlePostfix: ' - Most Wanted Angular',
+
+  localStorageKeyPrefix: 'mw-angular-',
 };

@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { MwEnvironmentService } from './mw-environment.service';
 import { MwPlatformService } from './mw-platform.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MwLocalStorageService {
-  constructor(protected mwPlatformService: MwPlatformService) {}
+  private readonly envKeyPrefix = 'localStorageKeyPrefix';
+
+  constructor(private mwPlatformService: MwPlatformService, private mwEnvironmentService: MwEnvironmentService) {}
 
   private serialize(data: any): string {
     return JSON.stringify(data);
@@ -18,13 +21,13 @@ export class MwLocalStorageService {
   setItem(key: string, value: any): void {
     if (this.mwPlatformService.isBrowser()) {
       const serializedData = this.serialize(value);
-      localStorage.setItem(key, serializedData);
+      localStorage.setItem(this.getPrefixedKey(key), serializedData);
     }
   }
 
   getItem<T>(key: string): T | null {
     if (this.mwPlatformService.isBrowser()) {
-      const value = localStorage.getItem(key);
+      const value = localStorage.getItem(this.getPrefixedKey(key));
       if (value !== null) {
         return this.unserialize<T>(value);
       }
@@ -35,7 +38,7 @@ export class MwLocalStorageService {
 
   deleteItem(key: string): void {
     if (this.mwPlatformService.isBrowser()) {
-      localStorage.removeItem(key);
+      localStorage.removeItem(this.getPrefixedKey(key));
     }
   }
 
@@ -43,5 +46,9 @@ export class MwLocalStorageService {
     if (this.mwPlatformService.isBrowser()) {
       localStorage.clear();
     }
+  }
+
+  private getPrefixedKey(key: string): string {
+    return this.mwEnvironmentService.getValue(this.envKeyPrefix, '') + key;
   }
 }

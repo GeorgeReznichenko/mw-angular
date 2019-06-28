@@ -7,6 +7,8 @@ export const environment = {
 
   titlePrefix: '',
   titlePostfix: ' - Most Wanted Angular - Development',
+
+  localStorageKeyPrefix: 'mw-angular-',
 };
 
 /*

@@ -7,13 +7,16 @@ import { MwEnvironmentService } from './mw-environment.service';
   providedIn: 'root',
 })
 export class MwMetaService {
+  private readonly envTitlePrefix = 'titlePrefix';
+  private readonly envTitlePostfix = 'titlePostfix';
+
   private pageTitleSubject = new BehaviorSubject<string>('');
 
   constructor(private mwEnvironmentService: MwEnvironmentService, private title: Title) {}
 
   setTitle(title: string): any {
-    const prefix = this.mwEnvironmentService.getValue('titlePrefix', '');
-    const postfix = this.mwEnvironmentService.getValue('titlePostfix', '');
+    const prefix = this.mwEnvironmentService.getValue(this.envTitlePrefix, '');
+    const postfix = this.mwEnvironmentService.getValue(this.envTitlePostfix, '');
 
     this.title.setTitle(`${prefix}${title}${postfix}`);
     this.pageTitleSubject.next(title);
