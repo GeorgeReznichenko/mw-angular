@@ -16,7 +16,7 @@ Use the package manager to install library.
 $ npm install @mw-angular/core
 ```
 
-Import **MwCoreModule** in your root module providing environment file.
+Optionally import **MwCoreModule** in your root module providing environment file.
 
 ```javascript
 import { environment } from '../environments/environment';
