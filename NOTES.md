@@ -18,7 +18,6 @@
 
 ## TODO
 
-- highlight top menu active buttons
 - top menu in 2 lines when small screen
 - transclude sidebar content
 - rename MwModules
