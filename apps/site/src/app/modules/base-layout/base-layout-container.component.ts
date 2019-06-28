@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { MwErrorLock, MwErrorLockService } from '@mw-angular/core';
-import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { filter, take, takeUntil } from 'rxjs/operators';
+import { ThemeStorage } from '../material/services/theme-storage';
 import { ThemesService } from '../material/services/themes.service';
 import { Theme } from '../material/types/theme';
 
@@ -23,21 +24,48 @@ import { Theme } from '../material/types/theme';
     </ng-template>
   `,
 })
-export class BaseLayoutContainerComponent {
+export class BaseLayoutContainerComponent implements OnDestroy {
   errorLock$: Observable<MwErrorLock | null>;
 
-  constructor(private mwErrorLockService: MwErrorLockService, private themesService: ThemesService) {
+  private destroySubject = new Subject();
+
+  constructor(
+    private mwErrorLockService: MwErrorLockService,
+    private themesService: ThemesService,
+    private themeStorage: ThemeStorage,
+  ) {
     this.errorLock$ = this.mwErrorLockService.getErrorLock();
+
+    this.initThemeStorage();
   }
 
   onChangeThemeEvent(): void {
     this.themesService
       .getSelectedTheme()
-      .pipe(take(1))
+      .pipe(
+        take(1),
+        takeUntil(this.destroySubject),
+      )
       .subscribe((theme: Theme) => {
-        theme === Theme.LightTheme
-          ? this.themesService.setSelectedTheme(Theme.DarkTheme)
-          : this.themesService.setSelectedTheme(Theme.LightTheme);
+        const selectedTheme = theme === Theme.LightTheme ? Theme.DarkTheme : Theme.LightTheme;
+
+        this.themesService.setSelectedTheme(selectedTheme);
+        this.themeStorage.storeTheme(selectedTheme).subscribe();
       });
+  }
+
+  private initThemeStorage(): void {
+    this.themeStorage
+      .getStoredTheme()
+      .pipe(
+        filter(Boolean),
+        takeUntil(this.destroySubject),
+      )
+      .subscribe((theme: Theme) => this.themesService.setSelectedTheme(theme));
+  }
+
+  public ngOnDestroy(): void {
+    this.destroySubject.next();
+    this.destroySubject.complete();
   }
 }

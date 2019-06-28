@@ -18,7 +18,6 @@
 
 ## TODO
 
-- save theme
 - highlight top menu active buttons
 - top menu in 2 lines when small screen
 - transclude sidebar content

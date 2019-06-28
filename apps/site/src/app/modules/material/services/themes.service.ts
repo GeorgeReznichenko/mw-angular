@@ -7,7 +7,7 @@ import { Theme } from '../types/theme';
   providedIn: 'root',
 })
 export class ThemesService {
-  private theme$ = new BehaviorSubject<Theme>(Theme.LightTheme);
+  private themeSubject = new BehaviorSubject<Theme>(Theme.LightTheme);
   private renderer: Renderer2;
 
   constructor(rendererFactory: RendererFactory2, private overlayContainer: OverlayContainer) {
@@ -15,13 +15,17 @@ export class ThemesService {
   }
 
   getSelectedTheme(): Observable<Theme> {
-    return this.theme$.asObservable();
+    return this.themeSubject.asObservable();
   }
 
   setSelectedTheme(theme: Theme): void {
+    if (theme === this.themeSubject.getValue()) {
+      return;
+    }
+
     this.loadStyles(theme);
     this.setOverlayClass(theme);
-    this.theme$.next(theme);
+    this.themeSubject.next(theme);
   }
 
   private loadStyles(theme: Theme): void {

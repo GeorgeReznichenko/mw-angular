@@ -11,9 +11,10 @@ export class ThemeStorage {
 
   constructor(private mwLocalStorageService: MwLocalStorageService) {}
 
-  storeTheme(theme: Theme): Observable<void> {
-    return new Observable((subscriber: Subscriber<void>) => {
-      subscriber.next(this.mwLocalStorageService.setItem(this.storageKey, theme));
+  storeTheme(theme: Theme): Observable<Theme> {
+    return new Observable((subscriber: Subscriber<Theme>) => {
+      this.mwLocalStorageService.setItem(this.storageKey, theme);
+      subscriber.next(theme);
       subscriber.complete();
 
       return () => {};
