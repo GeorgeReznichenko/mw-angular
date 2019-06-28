@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Event, NavigationEnd, Router } from '@angular/router';
+import { Event, NavigationStart, Router } from '@angular/router';
 import { Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Language } from '../entities/language';
@@ -20,8 +20,8 @@ export class CurrentLanguageService {
 
   init(): void {
     this.router.events
-      .pipe(filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe(({ url }: NavigationEnd) => {
+      .pipe(filter((event: Event): event is NavigationStart => event instanceof NavigationStart))
+      .subscribe(({ url }: NavigationStart) => {
         const currentLangId = url.split('/')[1];
         const acceptedLangIds = this.acceptedLanguagesService.getAcceptedLangs().map((lang: Language) => lang.id);
 
