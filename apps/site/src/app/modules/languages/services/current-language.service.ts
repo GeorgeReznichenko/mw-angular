@@ -52,7 +52,7 @@ export class CurrentLanguageService {
     );
   }
 
-  setCurrentLangId(langId: string): void {
+  private setCurrentLangId(langId: string): void {
     this.currentLangIdSubject.next(langId);
   }
 }

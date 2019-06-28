@@ -5,18 +5,16 @@ import { Language } from '../entities/language';
   providedIn: 'root',
 })
 export class AcceptedLanguagesService {
-  static readonly acceptedLangs = [
-    {
-      id: 'en',
-      label: 'En',
-    },
-    {
-      id: 'ru',
-      label: 'Ru',
-    },
-  ];
-
   getAcceptedLangs(): Language[] {
-    return AcceptedLanguagesService.acceptedLangs;
+    return [
+      {
+        id: 'en',
+        label: 'En',
+      },
+      {
+        id: 'ru',
+        label: 'Ru',
+      },
+    ];
   }
 }

@@ -21,4 +21,8 @@ export class LanguageSelectorComponent {
     this.currentLang$ = this.currentLanguageService.getCurrentLang();
     this.acceptedLangs = this.acceptedLanguagesService.getAcceptedLangs();
   }
+
+  onLangSelect(langId: string) {
+    console.log(langId);
+  }
 }
