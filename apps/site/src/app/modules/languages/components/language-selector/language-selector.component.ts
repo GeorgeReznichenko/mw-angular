@@ -12,13 +12,13 @@ import { CurrentLanguageService } from '../../services/current-language.service'
 })
 export class LanguageSelectorComponent {
   currentLang$: Observable<Language>;
-  acceptedLangs$: Observable<Language[]>;
+  acceptedLangs: Language[];
 
   constructor(
     private currentLanguageService: CurrentLanguageService,
     private acceptedLanguagesService: AcceptedLanguagesService,
   ) {
     this.currentLang$ = this.currentLanguageService.getCurrentLang();
-    this.acceptedLangs$ = this.acceptedLanguagesService.getAcceptedLangs();
+    this.acceptedLangs = this.acceptedLanguagesService.getAcceptedLangs();
   }
 }
