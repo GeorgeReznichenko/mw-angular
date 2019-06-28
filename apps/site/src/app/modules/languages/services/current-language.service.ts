@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
-import { distinctUntilChanged, take } from 'rxjs/operators';
+import { distinctUntilChanged, map, take, withLatestFrom } from 'rxjs/operators';
+import { Language } from '../entities/language';
+import { AcceptedLanguagesService } from './accepted-languages.service';
 import { DefaultLanguageService } from './default-language.service';
 
 @Injectable({
@@ -9,19 +11,34 @@ import { DefaultLanguageService } from './default-language.service';
 export class CurrentLanguageService {
   private currentLangIdSubject = new ReplaySubject<string>(1);
 
-  constructor(private defaultLanguageService: DefaultLanguageService) {
-    this.initDefaultLang();
+  constructor(
+    private defaultLanguageService: DefaultLanguageService,
+    private acceptedLanguagesService: AcceptedLanguagesService,
+  ) {
+    this.initDefaultLangId();
   }
 
-  private initDefaultLang(): void {
+  private initDefaultLangId(): void {
     this.defaultLanguageService
       .getDefaultLangId()
       .pipe(take(1))
       .subscribe((defaultLangId: string) => this.setCurrentLangId(defaultLangId));
   }
 
-  getCurrentLangId(): Observable<string> {
-    return this.currentLangIdSubject.pipe(distinctUntilChanged());
+  getCurrentLang(): Observable<Language> {
+    return this.currentLangIdSubject.pipe(
+      distinctUntilChanged(),
+      withLatestFrom(this.acceptedLanguagesService.getAcceptedLangs()),
+      map(([langId, acceptedLangs]) => {
+        const currentLang = acceptedLangs.find((lang: Language) => lang.id === langId);
+
+        if (currentLang === undefined) {
+          throw new Error(`Language id: ${langId} does not accepted.`);
+        }
+
+        return currentLang;
+      }),
+    );
   }
 
   setCurrentLangId(langId: string): void {

@@ -6,15 +6,15 @@ import { Language } from '../entities/language';
   providedIn: 'root',
 })
 export class AcceptedLanguagesService {
-  getAcceptedLanguages(): Observable<Language[]> {
+  getAcceptedLangs(): Observable<Language[]> {
     return of([
       {
         id: 'en',
-        label: 'English',
+        label: 'En',
       },
       {
         id: 'ru',
-        label: 'Русский',
+        label: 'Ru',
       },
     ]);
   }
