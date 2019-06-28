@@ -18,18 +18,15 @@
 
 ## TODO
 
+- save theme
 - highlight top menu active buttons
 - top menu in 2 lines when small screen
 - transclude sidebar content
 - rename MwModules
 - set lang for html tag
-- storybook
 - app shell
 - links in readme for core
-- stylelint plugins
-- check lazy routes fix
 - localization
-- write article about changing themes
 
 ### IDEAS FOR COMPONENTS
 
@@ -37,3 +34,4 @@
 - reusable pipe from https://codeburst.io/angular-bad-practices-eab0e594ce92
 - eventBus
 - File api https://stackoverflow.com/questions/5872815/reading-local-files-with-input-type-file
+- write article about changing themes
