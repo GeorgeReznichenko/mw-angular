@@ -18,13 +18,18 @@
 
 ## TODO
 
+- add home page (remove redirect)
 - top menu in 2 lines when small screen
 - transclude sidebar content
 - rename MwModules
-- set lang for html tag
 - app shell
 - links in readme for core
+- set lang for html tag
 - localization
+- routerLinks with lang
+- change lang redirect
+- default lang from browser
+- loader at top of the page
 
 ### IDEAS FOR COMPONENTS
 
