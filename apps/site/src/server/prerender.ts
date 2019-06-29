@@ -15,7 +15,7 @@ const DIST_FOLDER = join(process.cwd(), 'dist/site/browser');
 const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../dist/site/server/main.js');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../../dist/site/server/main.js');
 
 const index = readFileSync(INDEX_FILE_PATH, 'utf8');
 

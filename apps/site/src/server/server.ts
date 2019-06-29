@@ -23,7 +23,7 @@ const INDEX_FILE_PATH = join(DIST_FOLDER, 'index.html');
 const NOT_FOUND_MARKER = 'SET_STATUS_404';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../dist/site/server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../../../dist/site/server/main');
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine(
