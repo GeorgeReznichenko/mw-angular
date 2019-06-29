@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Language } from '../../entities/language';
-import { AcceptedLanguagesService } from '../../services/accepted-languages.service';
+import { Language } from '../../../../../cross-platform/languages/entities/language';
+import { AcceptedLanguagesService } from '../../../../../cross-platform/languages/services/accepted-languages.service';
 import { CurrentLanguageService } from '../../services/current-language.service';
 
 @Component({
@@ -14,10 +14,11 @@ export class LanguageSelectorComponent {
   currentLang$: Observable<Language>;
   acceptedLangs: Language[];
 
-  constructor(
-    private currentLanguageService: CurrentLanguageService,
-    private acceptedLanguagesService: AcceptedLanguagesService,
-  ) {
+  private acceptedLanguagesService: AcceptedLanguagesService;
+
+  constructor(private currentLanguageService: CurrentLanguageService) {
+    this.acceptedLanguagesService = new AcceptedLanguagesService();
+
     this.currentLang$ = this.currentLanguageService.getCurrentLang();
     this.acceptedLangs = this.acceptedLanguagesService.getAcceptedLangs();
   }

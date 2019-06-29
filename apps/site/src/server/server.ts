@@ -8,6 +8,8 @@ import * as express from 'express';
 import { join } from 'path';
 import { parse as urlParse } from 'url';
 import { existsSync, readFileSync } from 'fs';
+import { languageRedirect } from './middlewares/language-redirect';
+import { removeTrailingSlash } from './middlewares/remove-trailing-slash';
 
 import { SKIPPED_ROUTES } from './skipped-routes';
 import { PRERENDERED_ROUTES } from './prerendered-routes';
@@ -39,13 +41,7 @@ app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
 
 // Remove trailing slash
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-  if (req.url.substr(-1) === '/' && req.url.length > 1) {
-    res.redirect(301, req.url.slice(0, -1));
-  } else {
-    next();
-  }
-});
+app.use(removeTrailingSlash);
 
 // Serve static files
 app.get(
@@ -54,6 +50,9 @@ app.get(
     maxAge: '1y',
   }),
 );
+
+// Redirect if no lang in url
+app.use(languageRedirect);
 
 // Serve skipped routes
 if (SKIPPED_ROUTES.length > 0) {
