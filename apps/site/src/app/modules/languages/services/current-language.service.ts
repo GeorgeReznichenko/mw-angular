@@ -51,7 +51,7 @@ export class CurrentLanguageService {
       .pipe(filter((event: Event): event is NavigationStart => event instanceof NavigationStart))
       .subscribe(({ url }: NavigationStart) => {
         const currentLangId = url.split('/')[1];
-        const acceptedLangIds = this.acceptedLanguagesService.getAcceptedLangs().map((lang: Language) => lang.id);
+        const acceptedLangIds = this.acceptedLanguagesService.getAcceptedLangIds();
 
         if (!acceptedLangIds.includes(currentLangId)) {
           const trimUrl = url === '/' ? '' : url;

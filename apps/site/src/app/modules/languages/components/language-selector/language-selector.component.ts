@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Language } from '../../../../../cross-platform/languages/entities/language';
 import { AcceptedLanguagesService } from '../../../../../cross-platform/languages/services/accepted-languages.service';
 import { CurrentLanguageService } from '../../services/current-language.service';
+import { NavigateLanguageService } from '../../services/navigate-language.service';
 
 @Component({
   selector: 'app-language-selector',
@@ -16,7 +17,10 @@ export class LanguageSelectorComponent {
 
   private acceptedLanguagesService: AcceptedLanguagesService;
 
-  constructor(private currentLanguageService: CurrentLanguageService) {
+  constructor(
+    private currentLanguageService: CurrentLanguageService,
+    private navigateLanguageService: NavigateLanguageService,
+  ) {
     this.acceptedLanguagesService = new AcceptedLanguagesService();
 
     this.currentLang$ = this.currentLanguageService.getCurrentLang();
@@ -24,6 +28,6 @@ export class LanguageSelectorComponent {
   }
 
   onLangSelect(langId: string) {
-    console.log(langId);
+    this.navigateLanguageService.navigateSameUrlAnotherLang(langId);
   }
 }

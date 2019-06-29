@@ -1,5 +1,4 @@
 import * as express from 'express';
-import { Language } from '../../cross-platform/languages/entities/language';
 import { AcceptedLanguagesService } from '../../cross-platform/languages/services/accepted-languages.service';
 import { DefaultLanguageService } from '../../cross-platform/languages/services/default-language.service';
 
@@ -7,7 +6,7 @@ export const languageRedirect = (req: express.Request, res: express.Response, ne
   const defaultLanguageService = new DefaultLanguageService();
   const acceptedLanguagesService = new AcceptedLanguagesService();
   const currentLangId = req.path.split('/')[1];
-  const acceptedLangIds = acceptedLanguagesService.getAcceptedLangs().map((lang: Language) => lang.id);
+  const acceptedLangIds = acceptedLanguagesService.getAcceptedLangIds();
 
   if (!acceptedLangIds.includes(currentLangId)) {
     const trimUrl = req.path === '/' ? '' : req.path;
