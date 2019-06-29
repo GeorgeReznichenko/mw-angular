@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
+import { MwTagService } from '@mw-angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Language } from '../../../../cross-platform/languages/entities/language';
@@ -14,26 +15,14 @@ export class CurrentLanguageService {
   private defaultLanguageService: DefaultLanguageService;
   private acceptedLanguagesService: AcceptedLanguagesService;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private mwTagService: MwTagService) {
     this.defaultLanguageService = new DefaultLanguageService();
     this.acceptedLanguagesService = new AcceptedLanguagesService();
   }
 
   init(): void {
-    this.router.events
-      .pipe(filter((event: Event): event is NavigationStart => event instanceof NavigationStart))
-      .subscribe(({ url }: NavigationStart) => {
-        const currentLangId = url.split('/')[1];
-        const acceptedLangIds = this.acceptedLanguagesService.getAcceptedLangs().map((lang: Language) => lang.id);
-
-        if (!acceptedLangIds.includes(currentLangId)) {
-          const trimUrl = url === '/' ? '' : url;
-          this.router.navigateByUrl(`/${this.defaultLanguageService.getDefaultLangId()}${trimUrl}`);
-          return;
-        }
-
-        this.setCurrentLangId(currentLangId);
-      });
+    this.initLangFromUrl();
+    this.initHtmlTagChange();
   }
 
   getCurrentLang(): Observable<Language> {
@@ -55,5 +44,28 @@ export class CurrentLanguageService {
 
   private setCurrentLangId(langId: string): void {
     this.currentLangIdSubject.next(langId);
+  }
+
+  private initLangFromUrl(): void {
+    this.router.events
+      .pipe(filter((event: Event): event is NavigationStart => event instanceof NavigationStart))
+      .subscribe(({ url }: NavigationStart) => {
+        const currentLangId = url.split('/')[1];
+        const acceptedLangIds = this.acceptedLanguagesService.getAcceptedLangs().map((lang: Language) => lang.id);
+
+        if (!acceptedLangIds.includes(currentLangId)) {
+          const trimUrl = url === '/' ? '' : url;
+          this.router.navigateByUrl(`/${this.defaultLanguageService.getDefaultLangId()}${trimUrl}`);
+          return;
+        }
+
+        this.setCurrentLangId(currentLangId);
+      });
+  }
+
+  private initHtmlTagChange(): void {
+    this.getCurrentLang().subscribe((currentLang: Language) => {
+      this.mwTagService.updateTag('html', 'lang', currentLang.id);
+    });
   }
 }

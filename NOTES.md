@@ -24,7 +24,6 @@
 - rename MwModules
 - app shell
 - links in readme for core
-- set lang for html tag
 - localization
 - routerLinks with lang
 - change lang redirect
