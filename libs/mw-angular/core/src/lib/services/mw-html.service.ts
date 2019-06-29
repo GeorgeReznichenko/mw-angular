@@ -4,14 +4,16 @@ import { DOCUMENT } from '@angular/common';
 @Injectable({
   providedIn: 'root',
 })
-export class MwTagService {
+export class MwHtmlService {
   private renderer: Renderer2;
 
   constructor(rendererFactory: RendererFactory2, @Inject(DOCUMENT) private document: any) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
-  updateTag(selector: string, attributeName: string, attributeValue: string): void {
-    this.renderer.setAttribute(this.document.querySelector(selector), attributeName, attributeValue);
+  updateTags(selector: string, attributeName: string, attributeValue: string): void {
+    this.document.querySelectorAll(selector).forEach((element: Element) => {
+      this.renderer.setAttribute(element, attributeName, attributeValue);
+    });
   }
 }

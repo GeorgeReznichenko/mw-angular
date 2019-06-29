@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
-import { MwTagService } from '@mw-angular/core';
+import { MwHtmlService } from '@mw-angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Language } from '../../../../cross-platform/languages/entities/language';
@@ -15,7 +15,7 @@ export class CurrentLanguageService {
   private defaultLanguageService: DefaultLanguageService;
   private acceptedLanguagesService: AcceptedLanguagesService;
 
-  constructor(private router: Router, private mwTagService: MwTagService) {
+  constructor(private router: Router, private mwHtmlService: MwHtmlService) {
     this.defaultLanguageService = new DefaultLanguageService();
     this.acceptedLanguagesService = new AcceptedLanguagesService();
   }
@@ -65,7 +65,7 @@ export class CurrentLanguageService {
 
   private initHtmlTagChange(): void {
     this.getCurrentLang().subscribe((currentLang: Language) => {
-      this.mwTagService.updateTag('html', 'lang', currentLang.id);
+      this.mwHtmlService.updateTags('html', 'lang', currentLang.id);
     });
   }
 }
