@@ -7,6 +7,7 @@ This is the core library from **Most Wanted Angular Libs**
 (**[site](https://mw-angular.com)**, **[repository](https://github.com/misticwonder/mw-angular#readme)**).
 
 Includes widely used services for Angular projects.
+Library supports server side rendering.
 
 ## Getting Started
 

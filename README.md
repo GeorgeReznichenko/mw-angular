@@ -5,6 +5,7 @@
 # Most Wanted Angular Libs
 
 This is the collection of useful libraries for Angular projects.
+All libraries support server side rendering.
 
 #### Quick links
 
