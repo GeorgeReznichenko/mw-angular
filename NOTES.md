@@ -25,9 +25,11 @@
 - rename MwModules
 - loader at top of the page
 - links in readme for core
+- flicker translations
 
 - app shell
 - default lang from browser
+- flicker theme
 
 ### IDEAS FOR COMPONENTS
 
