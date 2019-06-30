@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/misticwonder/mw-angular.git"
   },
+  "browser": {
+    "fs": false
+  },
   "scripts": {
     "------------------ site ------------------": "",
     "start:site": "ng serve site --port 4200",

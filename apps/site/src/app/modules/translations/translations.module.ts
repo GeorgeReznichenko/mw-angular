@@ -2,19 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MwPlatformService } from '../../../../../../libs/mw-angular/core/src/lib/services/mw-platform.service';
+import { TranslateServerLoader } from './loaders/translate-server-loader';
 import { CurrentLanguageService } from './services/current-language.service';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 
 @NgModule({
   imports: [
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
+        useFactory: LoaderFactory,
+        deps: [MwPlatformService, HttpClient],
       },
     }),
   ],
@@ -30,4 +28,18 @@ export class TranslationsModule {
 
     currentLanguageService.init();
   }
+}
+
+export function LoaderFactory(mwPlatformService: MwPlatformService, httpClient: HttpClient): TranslateLoader {
+  let translateLoader: TranslateLoader;
+
+  if (mwPlatformService.isServer()) {
+    translateLoader = new TranslateServerLoader();
+  } else if (mwPlatformService.isBrowser()) {
+    translateLoader = new TranslateHttpLoader(httpClient);
+  } else {
+    throw new Error('Unknown platform.');
+  }
+
+  return translateLoader;
 }
