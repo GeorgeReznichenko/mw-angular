@@ -12,7 +12,7 @@ export class MwHtmlService {
   }
 
   updateTags(selector: string, attributeName: string, attributeValue: string): void {
-    this.document.querySelectorAll(selector).forEach((element: Element) => {
+    Array.from(this.document.querySelectorAll(selector)).forEach((element: any) => {
       this.renderer.setAttribute(element, attributeName, attributeValue);
     });
   }
