@@ -2,8 +2,7 @@
   <button
     type="button"
     mat-icon-button
-    aria-label="Toggle sidenav"
-    matTooltip="Toggle sidenav"
+    matTooltip="{{ 'BaseLayoutComponent.ToggleSidenav' | translate }}"
     (click)="sidenavStart.toggle()"
     *ngIf="(isBigScreen$ | async) === false"
   >
@@ -26,7 +25,7 @@
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ update: '' | addLangToLink | async }"
   >
-    Documentation
+    {{ 'BaseLayoutComponent.Documentation' | translate }}
   </a>
 
   <span class="flex-grow-1"></span>
@@ -35,14 +34,16 @@
   <button
     type="button"
     mat-icon-button
-    aria-label="Change theme"
-    matTooltip="Change theme"
+    matTooltip="{{ 'BaseLayoutComponent.ChangeTheme' | translate }}"
     (click)="changeThemeEvent.emit()"
   >
-    <mat-icon aria-label="Change theme icon">format_color_fill</mat-icon>
+    <mat-icon>format_color_fill</mat-icon>
   </button>
-  <a mat-icon-button href="https://github.com/misticwonder/mw-angular" aria-label="GitHub Repository">
-    <img src="assets/github-circle-white-transparent.svg" alt="GitHub Repository" />
+  <a mat-icon-button href="https://github.com/misticwonder/mw-angular">
+    <img
+      src="assets/github-circle-white-transparent.svg"
+      alt="{{ 'BaseLayoutComponent.GitHubRepository' | translate }}"
+    />
   </a>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">

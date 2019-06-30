@@ -1,1 +1,14 @@
-{}
+{
+  "BaseLayoutComponent": {
+    "ToggleSidenav": "Меню",
+    "Documentation": "Документация",
+    "ChangeTheme": "Сменить тему",
+    "GitHubRepository": "GitHub"
+  },
+  "DocsPageContainerComponent": {
+    "Title": "Документация"
+  },
+  "NotFoundPageContainerComponent": {
+    "Title": "Страница не найдена"
+  }
+}

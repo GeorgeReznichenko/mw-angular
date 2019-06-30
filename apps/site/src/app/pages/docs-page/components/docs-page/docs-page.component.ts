@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-docs-page',
@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './docs-page.component.html',
   styleUrls: ['./docs-page.component.scss'],
 })
-export class DocsPageComponent {}
+export class DocsPageComponent {
+  @Input() currentLangId: string;
+}

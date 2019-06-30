@@ -1,1 +1,14 @@
-{}
+{
+  "BaseLayoutComponent": {
+    "ToggleSidenav": "Toggle Sidenav",
+    "Documentation": "Documentation",
+    "ChangeTheme": "Change Theme",
+    "GitHubRepository": "GitHub Repository"
+  },
+  "DocsPageContainerComponent": {
+    "Title": "Documentation"
+  },
+  "NotFoundPageContainerComponent": {
+    "Title": "Page not found"
+  }
+}

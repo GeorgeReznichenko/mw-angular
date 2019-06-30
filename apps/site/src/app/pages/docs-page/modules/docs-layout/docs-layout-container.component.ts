@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MwMetaService } from '@mw-angular/core';
 import { Observable } from 'rxjs';
+import { MetaService } from '../../../../modules/core/services/meta.service';
 
 @Component({
   selector: 'app-docs-layout-container',
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 export class DocsLayoutContainerComponent {
   pageTitle$: Observable<string>;
 
-  constructor(private mwMetaService: MwMetaService) {
-    this.pageTitle$ = this.mwMetaService.getPageTitle();
+  constructor(private metaService: MetaService) {
+    this.pageTitle$ = this.metaService.getPageTitle();
   }
 }
