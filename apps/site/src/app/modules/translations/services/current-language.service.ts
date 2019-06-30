@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
 import { MwHtmlService } from '@mw-angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Language } from '../../../../cross-platform/languages/entities/language';
@@ -15,13 +16,18 @@ export class CurrentLanguageService {
   private defaultLanguageService: DefaultLanguageService;
   private acceptedLanguagesService: AcceptedLanguagesService;
 
-  constructor(private router: Router, private mwHtmlService: MwHtmlService) {
+  constructor(
+    private router: Router,
+    private mwHtmlService: MwHtmlService,
+    private translateService: TranslateService,
+  ) {
     this.defaultLanguageService = new DefaultLanguageService();
     this.acceptedLanguagesService = new AcceptedLanguagesService();
   }
 
   init(): void {
     this.initLangFromUrl();
+    this.initTranslations();
     this.initHtmlTagChange();
   }
 
@@ -61,6 +67,14 @@ export class CurrentLanguageService {
 
         this.setCurrentLangId(currentLangId);
       });
+  }
+
+  private initTranslations(): void {
+    this.translateService.setDefaultLang(this.defaultLanguageService.getDefaultLangId());
+
+    this.getCurrentLang().subscribe((currentLang: Language) => {
+      this.translateService.use(currentLang.id);
+    });
   }
 
   private initHtmlTagChange(): void {
