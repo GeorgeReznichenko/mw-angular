@@ -14,7 +14,7 @@ export class MwMetaService {
 
   constructor(private mwEnvironmentService: MwEnvironmentService, private title: Title) {}
 
-  setTitle(title: string): any {
+  setTitle(title: string): void {
     const prefix = this.mwEnvironmentService.getValue(this.envTitlePrefix, '');
     const postfix = this.mwEnvironmentService.getValue(this.envTitlePostfix, '');
 
