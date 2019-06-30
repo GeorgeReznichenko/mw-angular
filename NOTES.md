@@ -23,12 +23,10 @@
 - transclude sidebar content
 - rename MwModules
 - app shell
+- loader at top of the page
 - links in readme for core
 - localization
-- routerLinks with lang
-- change lang redirect
 - default lang from browser
-- loader at top of the page
 
 ### IDEAS FOR COMPONENTS
 
