@@ -25,7 +25,6 @@
 - app shell
 - loader at top of the page
 - links in readme for core
-- localization
 - default lang from browser
 
 ### IDEAS FOR COMPONENTS

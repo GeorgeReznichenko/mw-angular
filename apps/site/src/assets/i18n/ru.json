@@ -1,9 +1,9 @@
 {
   "BaseLayoutComponent": {
-    "ToggleSidenav": "Меню",
-    "Documentation": "Документация",
     "ChangeTheme": "Сменить тему",
-    "GitHubRepository": "GitHub"
+    "Documentation": "Документация",
+    "GitHubRepository": "GitHub",
+    "ToggleSidenav": "Меню"
   },
   "DocsPageContainerComponent": {
     "Title": "Документация"
