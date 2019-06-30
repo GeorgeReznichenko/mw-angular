@@ -4,7 +4,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This is the core library from **Most Wanted Angular Libs**
-(**[site](https://mw-angular.com)**, **[repository](https://github.com/misticwonder/mw-angular#readme)**).
+(**[site](https://mw-angular.com/en)**, **[repository](https://github.com/misticwonder/mw-angular#readme)**).
 
 Includes widely used services for Angular projects.
 Library supports server side rendering.
@@ -48,14 +48,16 @@ export class AppModule {}
 | MwPlatformService     | [Docs][5] |
 | MwRequestService      | [Docs][6] |
 | MwErrorLockService    | [Docs][7] |
+| MwHtmlService         | [Docs][8] |
 
-[1]: https://mw-angular.com/docs
-[2]: https://mw-angular.com/docs
-[3]: https://mw-angular.com/docs
-[4]: https://mw-angular.com/docs
-[5]: https://mw-angular.com/docs
-[6]: https://mw-angular.com/docs
-[7]: https://mw-angular.com/docs
+[1]: https://mw-angular.com/en/docs
+[2]: https://mw-angular.com/en/docs
+[3]: https://mw-angular.com/en/docs
+[4]: https://mw-angular.com/en/docs
+[5]: https://mw-angular.com/en/docs
+[6]: https://mw-angular.com/en/docs
+[7]: https://mw-angular.com/en/docs
+[8]: https://mw-angular.com/en/docs
 
 ## Contributing
 
@@ -70,6 +72,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-> You can check out the full license [here](https://github.com/misticwonder/mw-angular/blob/production/libs/mw-angular/core/LICENSE).
+> You can check out the full license [here](https://raw.githubusercontent.com/misticwonder/mw-angular/production/libs/mw-angular/core/LICENSE).
 
 This project is licensed under the terms of the **MIT** license.

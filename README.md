@@ -9,7 +9,7 @@ All libraries support server side rendering.
 
 #### Quick links
 
-[Documentation, demos, and guides](https://mw-angular.com)
+[Documentation, demos, and guides](https://mw-angular.com/en)
 
 ---
 
