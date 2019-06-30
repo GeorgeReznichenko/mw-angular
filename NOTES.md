@@ -18,13 +18,15 @@
 
 ## TODO
 
+- remove flicker from top menu
 - add home page (remove redirect)
 - top menu in 2 lines when small screen
 - transclude sidebar content
 - rename MwModules
-- app shell
 - loader at top of the page
 - links in readme for core
+
+- app shell
 - default lang from browser
 
 ### IDEAS FOR COMPONENTS
