@@ -1,9 +1,9 @@
 <button mat-button [matMenuTriggerFor]="languageSelector">
-  {{ (currentLang$ | async)?.label }}
+  {{ currentLang?.label }}
   <mat-icon>arrow_drop_down</mat-icon>
 </button>
 <mat-menu #languageSelector="matMenu">
-  <button mat-menu-item *ngFor="let lang of acceptedLangs" (click)="onLangSelect(lang.id)">
+  <button mat-menu-item *ngFor="let lang of acceptedLangs" (click)="langSelectEvent.emit(lang)">
     {{ lang.label }}
   </button>
 </mat-menu>

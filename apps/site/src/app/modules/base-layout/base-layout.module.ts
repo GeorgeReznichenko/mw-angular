@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { ErrorsModule } from '../errors/errors.module';
-import { LanguagesModule } from '../languages/languages.module';
+import { LanguageSelectorModule } from '../language-selector/language-selector.module';
 import { SharedModule } from '../shared/shared.module';
 import { BaseLayoutContainerComponent } from './base-layout-container.component';
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
 
 @NgModule({
-  imports: [SharedModule, ErrorsModule, LanguagesModule],
+  imports: [SharedModule, ErrorsModule, LanguageSelectorModule],
   declarations: [BaseLayoutContainerComponent, BaseLayoutComponent],
   exports: [BaseLayoutContainerComponent],
 })
