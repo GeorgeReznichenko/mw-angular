@@ -9,6 +9,10 @@ $toolbar-small: 56px;
     img {
       height: 26px;
     }
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
