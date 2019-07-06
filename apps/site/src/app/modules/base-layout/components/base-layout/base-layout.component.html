@@ -10,23 +10,15 @@
   </button>
 
   <a
-    mat-button
+    class="d-flex justify-content-center align-items-center logo"
     [routerLink]="'/' | addLangToLink | async"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true, update: '' | addLangToLink | async }"
   >
-    <img src="assets/angular-white-transparent.svg" alt="Most Wanted Angular" />
-    Most Wanted Angular
+    <span>W</span>W<img src="assets/angular-white-transparent.svg" alt="Most Wanted Angular" />
   </a>
 
-  <a
-    mat-button
-    [routerLink]="'/docs' | addLangToLink | async"
-    routerLinkActive="active"
-    [routerLinkActiveOptions]="{ update: '' | addLangToLink | async }"
-  >
-    {{ 'BaseLayoutComponent.Documentation' | translate }}
-  </a>
+  <app-top-menu type="line" class="d-none d-md-flex"></app-top-menu>
 
   <span class="flex-grow-1"></span>
 
@@ -55,11 +47,12 @@
     [mode]="(isBigScreen$ | async) ? 'side' : 'over'"
     [opened]="(isBigScreen$ | async) === true"
   >
-    <!--<mat-nav-list>
+    <mat-nav-list>
+      <app-top-menu type="drop" class="d-flex d-md-none"></app-top-menu>
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>-->
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <div class="container">

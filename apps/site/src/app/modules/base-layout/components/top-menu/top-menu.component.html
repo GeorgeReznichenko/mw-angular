@@ -1,0 +1,28 @@
+<nav class="d-flex align-items-center justify-content-center" *ngIf="type === 'line'">
+  <a
+    mat-button
+    [routerLink]="'/features' | addLangToLink | async"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ update: '' | addLangToLink | async }"
+  >
+    {{ 'BaseLayoutComponent.Features' | translate }}
+  </a>
+
+  <a
+    mat-button
+    [routerLink]="'/resources' | addLangToLink | async"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ update: '' | addLangToLink | async }"
+  >
+    {{ 'BaseLayoutComponent.Resources' | translate }}
+  </a>
+
+  <a
+    mat-button
+    [routerLink]="'/docs' | addLangToLink | async"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ update: '' | addLangToLink | async }"
+  >
+    {{ 'BaseLayoutComponent.Docs' | translate }}
+  </a>
+</nav>
